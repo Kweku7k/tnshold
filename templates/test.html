@@ -76,8 +76,8 @@ var formHolder = document.getElementsByClassName('trick-form')[0]
     var theForm = document.createElement('div')
     // var formArray = array.innerHTML
     var formContent= `
-    <label for = "food">Food</label>
-    <input type="text" class="form-control" id="food" name="food" value="${objectCho}">
+  
+    <input type="hidden" class="form-control" id="food" name="food" value="${objectCho}">
     </div>
     `
     theForm.innerHTML = formContent
@@ -87,8 +87,8 @@ var formHolder = document.getElementsByClassName('trick-form')[0]
     var theTotal = document.createElement('div')
     // var formArray = array.innerHTML
     var totalContent= `
-    <label for = "food">Total</label>
-    <input type="text" class="form-control" id="total" name="total" value="${totalCho}">
+ 
+    <input type="hidden" class="form-control" id="total" name="total" value="${totalCho}">
     </div>
     `
     theTotal.innerHTML = totalContent

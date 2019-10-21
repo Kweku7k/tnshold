@@ -32,15 +32,24 @@
     <div class="thanks text-center">
     <h4 class="one">Thank you for using The Night Shift</h4>
     <br>
-    <h6>Your order id is</h6>
-    <h1 class="big">20</h1>
+    <h6>Your cart total is</h6>
+   <div class="variable">
+
+   </div>
     <br>  
     <h6>Estimated time of arrival is 10 minutes</h6>
     </div>
+
+    <!-- <div class="row"> -->
     <div class="Done">
       <h6 class="done" style="text-align: center; vertical-align: middle;">Order Again</h6 >
     </div>
-    
+
+    <!-- <div class="Done">
+        <h6 class="done" style="text-align: center; vertical-align: middle;">Order Again</h6 >
+      </div>
+      </div>
+     -->
     <!-- <button class="again">Lets do it again!</button> -->
     <div class="inner-summary-card">
       <!-- <div class="Total">
@@ -51,5 +60,18 @@
     </div>
   </div>
 
+<script>
+var totalCho = JSON.parse(localStorage.getItem("finalFigure"));
 
+var totalHolder = document.getElementsByClassName('variable')[0]
+    var theTotal = document.createElement('div')
+    // var formArray = array.innerHTML
+    var totalContent= `
+    <h1 class="big">Ghc${totalCho}</h1>
+    </div>
+    `
+    
+    theTotal.innerHTML = totalContent
+    totalHolder.append(theTotal)
+</script>
 {% endblock %}

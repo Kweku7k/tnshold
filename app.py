@@ -50,6 +50,7 @@ def move():
 @app.route('/test', methods=['POST','GET'])
 def index():
     if request.method == 'POST' :
+        # order_id = request.form['id']
         order_name = request.form['Name']
         order_room = request.form['Room']
         order_pnumber = request.form['phone']
@@ -59,6 +60,7 @@ def index():
         order_block = request.form['block']
         order_total = request.form['total']
 
+        identify = Order.id
         final_order = Order(name=order_name, pNumber=order_pnumber, room=order_room, aNumber=order_anumber, food=order_food, hostel=order_hostel, block=order_block, total=order_total)
         # user_number = Order(pNumber=order_pnumber)
         # user_room = Order(room=order_room)
@@ -72,7 +74,10 @@ def index():
         db.session.commit()
         all_orders = Order.query.order_by(Order.date_created).all()
         print (all_orders)
-        return render_template('chart.html', all_orders=all_orders )
+        print (identify)
+        return render_template('invoice.html', all_orders=all_orders )
+
+        # return render_template('invoice.html', )
 
         # except Exception as e:
         #     print(e)
