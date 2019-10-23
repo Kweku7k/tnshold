@@ -7,9 +7,12 @@ body{
     margin:0;
     padding: 0;
 }
-Tabs*/
+/* a{
+    color:inherit;
+} */
+
 section {
-    padding: 60px 0;
+    /* padding: 60px 0; */
 }
 
 section .section-title {
@@ -50,6 +53,8 @@ section .section-title {
     border-radius: 15px;
 }
 
+
+
 .cho-card-2{
     width: 170px;
     height: 100px;
@@ -89,6 +94,14 @@ section .section-title {
     /* margin-top: 5%; */
 
 }
+.continue-button{
+    background: #ffec13;
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    
+}
+
 .start-button{
     background: #ffec13;
     width: 60%;
@@ -159,6 +172,7 @@ section .section-title {
     display: inline-block;
     margin: 4px 2px;
     cursor: pointer;
+    left: 0;
     /* height: 80px; */
     border-radius: 16px;
     width: 100%;

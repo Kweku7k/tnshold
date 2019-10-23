@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+<!-- ------head tag---------- -->
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/table.css')}}">
+{% endblock %}
+<!-- ---------body tag---------- -->
+{% block body %}
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Number</th>
+        <th>Complaints</th>
+    </tr>
+    {% for Complaints in all_issues %}
+    <tr>
+        <th>{{ Complaints.id }}</th>
+        <th>{{ Complaints.name }}</th>
+        <th>{{Complaints.number}}</th>
+        <th>{{Complaints.complaint}}</th>
+    </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
+<!-- ---------------- -->

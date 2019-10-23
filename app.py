@@ -22,6 +22,16 @@ class Order(db.Model):
     def __repr__(self):
         return '<Order %r>' % self.name
 
+
+class Complaints(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(20))
+    contact = db.Column(db.String(20))
+    complaints = db.Column(db.String(200))
+    
+    def __repr__(self):
+        return '<Complaint %r>' %self.id
+
 @app.route('/')
 def start():
     return render_template('index.html')
@@ -30,7 +40,7 @@ def start():
 def menu():
     return render_template('menu.html')
     # if request.method == 'POST':
-    #     order_food = request.form['food']
+    #     order_food = request.f <!-- <input type="textarea" sty <!-- <input type="textarea" style="height: 130px; resize: none;" class="form-control" id="phone"> -->le="height: 130px; resize: none;" class="form-control" id="phone"> -->orm['food']
     #     cho = Order(food=order_food)
     #     print (cho)
     #     db.session.add(cho)
@@ -114,10 +124,34 @@ def deliveryportal():
     all_orders = Order.query.order_by(Order.date_created).all()
     return render_template('deliveryportal.html', all_orders=all_orders)
 
+@app.route('/reply')
+def reply():
+    return render_template('reply.html')
+
+
+
+@app.route('/complaints', methods=['POST','GET'])
+def complaints():
+    if request.method == 'POST' :
+        issue_name = request.form['name']
+        issue_number = request.form['number']
+        issue_complaint = request.form['complaints']
+
+        issue = Complaints(name=issue_name, contact=issue_number, complaints = issue_complaint)
+        
+        db.session.add(issue)
+        db.session.commit()
+        all_issues = Order.query.all()
+        print (all_issues)
+        return render_template('final.html', all_issues=all_issues )
+
+    else:
+        return "Sorry, didnt work..."
+
+
 @app.route('/invoice')
 def invoice():
     return render_template('invoice.html')
-
 
 
 if __name__ == "__main__":

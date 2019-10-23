@@ -29,7 +29,7 @@ body{
 }
 .top-thing{
     font-weight: bold;
-    margin-top:30px;
+    margin-top:15px;
     margin-left: 20px;
 }
 .thanks{
@@ -67,4 +67,7 @@ font-size: 100px;
 }
 .total-no{
     color: white;
+}
+.space{
+    width: 10px;;
 }

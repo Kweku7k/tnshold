@@ -19,7 +19,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-        <a class="navbar-brand" href="index.html">TNS</a>
+        <a class="navbar-brand" href="{{ url_for('start')}},">TNS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,14 +50,14 @@
         <div class="Option 1">
             <div class="row" style="margin-left: 2%; margin-right: 2%;">
                 <div class="image-1" >
-                  <img src="{{ url_for('static',filename='img/burger.jpg')}}">
+                  <img src="{{ url_for('static',filename='img/solobo2.jpg')}}">
                   <!-- {{ url_for('static',filename='img/burger.jpg')}}"> -->
                 </div>
                 <div class="content" style="width:60%; ">
                 <div class="title">
-                  <h6 style="font-weight: bold;">Grilled Rice</h6>
+                  <h6 style="font-weight: bold;">Sobolo</h6>
                 </div>
-                  <div class="content-p" style="font-size: 15px; color:gray; ">So yeah, this is basically food that </div>
+                  <div class="content-p" style="font-size: 15px; color:gray; ">A blend of ginger and pineapple with spices. </div>
                 </div>
                 <div class="options content-right">
                     <div class="addcart" style="text-align: right;">
@@ -65,7 +65,7 @@
                 </div>
                 <br>
                 <div class="price" style="font-size: 13px;">
-                    <p align="right">Ghc 12.00</p>
+                    <p align="right">Ghc 2.00</p>
                 </div>
                 </div>
                 
@@ -74,13 +74,13 @@
         <div class="Option 1">
           <div class="row" style="margin-left: 2%; margin-right: 2%;">
               <div class="image-1" >
-                  <img class ="ing" src="{{ url_for('static',filename='img/burger.jpg')}}">
+                  <img class ="ing" src="{{ url_for('static',filename='img/bread.jpeg')}}">
               </div>
               <div class="content" style="width:60%; ">
               <div class="title">
-                <h6 style="font-weight: bold;">Grilled Fish</h6>
+                <h6 style="font-weight: bold;">Bread</h6>
               </div>
-                <div class="content-p" style="font-size: 15px; color:gray; ">So yeah, this is basically food that </div>
+                <div class="content-p" style="font-size: 15px; color:gray; ">A short description of the item </div>
               </div>
               <div class="options content-right">
                   <div class="addcart" style="text-align: right;">
@@ -120,51 +120,6 @@
               CART
         <section class="container content-section">
           <div class="store-items">
-            <!-- <div class="cart-card" style="margin-top: 20px;">
-              <div class="container">
-                <div class="row">
-                  <div class="item-image" >
-                    <img src="img/fastfood.png">
-                  </div>
-                  <div class="item-name" style="width: 40%; font-size: 20px; padding-top: 15px;">
-                    Grilled Rice
-                  </div>
-                  <input class="cart-quantity-input" type="number" value="1" style="height:9%; width: 7%; vertical-align: middle;">
-                  <div class="right-control" style="width: 20%; text-align: right;">
-                  <div class="remove-item">
-                    <i class="fa fa-minus-circle fa-2x"></i>
-                  </div>
-                  <div class="item-price">
-                    <small class="text-muted price">Ghc 30.00</small> 
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            
-            <!-- <div class="cart-card" style="margin-top: 20px;">
-                <div class="container">
-                  <div class="row">
-                    <div class="item-image">
-                      <img src="img/fries.jpg">
-                    </div>
-                    <div class="item-name" style="width: 40%; font-size: 20px; padding-top: 15px;">
-                      Grilled Rice
-                    </div>
-                    <input class="cart-quantity-input" type="number" value="1" style="height:9%; width: 7%; vertical-align: middle;">
-                    <div class="right-control" style="width: 20%; text-align: right;">
-                    <div class="remove-item">
-                      <i class="fa fa-minus-circle fa-2x"></i>
-                    </div>
-                    <div class="item-price">
-                      <small class="text-muted price">Ghc 30.00</small> 
-                      </div>  
-                      
-                    </div>
-                  </div>
-                </div>
-              </div> -->
               
             </div> 
           </section>
