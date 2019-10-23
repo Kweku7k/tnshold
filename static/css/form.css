@@ -17,5 +17,7 @@
   }
 
   .whitespace{
-    height: 100px;
+    background: black;
+    height: 100px!important;
+    width: 100%;
 }
