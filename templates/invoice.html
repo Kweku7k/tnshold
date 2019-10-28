@@ -1,11 +1,6 @@
-<!-- {% extends 'base.html'%}
 
-{% block head %} -->
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->  <!--<![endif]-->
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,26 +13,11 @@
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-    <a class="navbar-brand" href="{{url_for('start')}}">TNS</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="menu.html">Menu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="cart.html">Cart</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+
+  <nav class="navbar navbar-light bg-transparent">
+      <span class="navbar-brand mb-0 h1">TNS</span>
+    </nav>
+
 <h4 class="top-thing">Your order is being processed</h4>
 
   <div class="summary-card">
@@ -55,17 +35,17 @@
 <!-- <div class="allovit" style="margin: auto;"> -->
     <div class="row">
      <!-- <div class="col-md-6"> -->
-    <!-- <div class="Done"> -->
+    <div class="Done">
       <h6 class="done" style="text-align: center; vertical-align: middle;"><a href="{{ url_for('menu')}}" style="color:black;"> &larr; Order Again</a></h6 >
-    <!-- </div> -->
+    </div>
     
     <!-- </div> -->
     <div class="space">
     </div>
     <!-- <div class="col-md-6"> -->
-    <!-- <div class="Done"> -->
+    <div class="Done">
       <h6 class="done" style="text-align: center; color: black; "><a href="{{ url_for('reply')}}" style="color: black;">Leave a reply &#8594;</a></h6 >
-    <!-- </div> -->
+    </div>
     <!-- </div> -->
     <!-- </div> -->
 </div>
@@ -100,4 +80,3 @@ var totalHolder = document.getElementsByClassName('variable')[0]
 
 </body>
 </html>
-<!-- {% endblock %} -->

@@ -24,13 +24,13 @@ class Order(db.Model):
 
 
 class Complaints(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(20))
-    contact = db.Column(db.String(20))
-    complaints = db.Column(db.String(200))
+    c_id = db.Column(db.Integer, primary_key=True)
+    c_name = db.Column(db.String(20))
+    c_number = db.Column(db.String(20))
+    c_complaints = db.Column(db.String(200))
     
     def __repr__(self):
-        return '<Complaint %r>' %self.id
+        return '<Complaint %r>' %self.c_name
 
 @app.route('/')
 def start():
@@ -133,17 +133,17 @@ def reply():
 @app.route('/complaints', methods=['POST','GET'])
 def complaints():
     if request.method == 'POST' :
-        issue_name = request.form['name']
-        issue_number = request.form['number']
-        issue_complaint = request.form['complaints']
+        issue_name = request.form['com_name']
+        issue_number = request.form['com_number']
+        issue_complaint = request.form['com_complaints']
 
-        issue = Complaints(name=issue_name, contact=issue_number, complaints = issue_complaint)
+        issue = Complaints(c_name=issue_name, c_number=issue_number, c_complaints = issue_complaint)
         
         db.session.add(issue)
         db.session.commit()
-        all_issues = Order.query.all()
+        all_issues = Complaints.query.all()
         print (all_issues)
-        return render_template('final.html', all_issues=all_issues )
+        return render_template('issues.html', all_issues=all_issues )
 
     else:
         return "Sorry, didnt work..."
