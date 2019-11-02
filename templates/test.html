@@ -12,11 +12,7 @@
     <input type="text" class="form-control" name="Name" id="Name" required>
   </div>
 
-  <div class="form-group">
-    <label for="Room">Room Number</label>
-    <input type="number" class="form-control" name="Room" id="Room" required>
-    <!-- <input type="submit" class="Checkout" placeholder="Checkout"> -->
-  </div>
+ 
   <div class="form-group">
     <label for="phone">Phone Number</label>
     <input type="text" class="form-control" name="phone" id="phone">
@@ -60,6 +56,17 @@
   </div>
 
   <div class="total-form">
+
+
+  </div>
+
+  <div class="form-group">
+      <label for="Room">Room Number</label>
+      <input type="number" class="form-control" name="Room" id="Room" required>
+      <!-- <input type="submit" class="Checkout" placeholder="Checkout"> -->
+    </div>
+
+  <div class="vendorssss">
 
 
   </div>
@@ -130,6 +137,7 @@ function anothername() {
   var objectCho = JSON.parse(localStorage.getItem("Hope"));
   // var totalCho = JSON.parse(localStorage.getItem("Total"));
   var totalCho = JSON.parse(localStorage.getItem("finalFigure"));
+  var vendorDetails = JSON.parse(localStorage.getItem("activeVendor"));
   // var getObject = JSON.parse(localStorage.getItem('storeObj'))
 
   // document.getElementsByClassName("food").innerText = localStorage.getItem("tItems");
@@ -164,6 +172,17 @@ function anothername() {
   theTotal.innerHTML = totalContent
   totalHolder.append(theTotal)
 
+
+  var vendorSpot = document.getElementsByClassName('vendorssss')[0]
+  var SpotHead = document.createElement('div')
+  // var formArray = array.innerHTML
+  var vendorContent = `
+  
+    <input type="hidden" class="form-control" id="vendor" name="vendor" value="${vendorDetails}">
+    </div>
+    `
+  SpotHead.innerHTML = vendorContent
+  vendorSpot.append(SpotHead)
   
 </script>
 

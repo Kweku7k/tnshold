@@ -1,103 +1,85 @@
- {% extends 'base.html'%}
 
-{% block head %}
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->  <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="../static/css/card.css">
-    </head>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/card.css">
+</head>
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-    <a class="navbar-brand" href="{{url_for('start')}}">TNS</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="menu.html">Menu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="cart.html">Cart</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+
+<nav class="navbar navbar-light bg-transparent">
+  <span class="navbar-brand mb-0 h1">TNS</span>
+</nav>
+
 <h4 class="top-thing">Your order is being processed</h4>
 
-  <div class="summary-card">
-    <div class="thanks text-center">
-    <h4 class="one">Thank you for using TNS</h4>
-    <br>
-    <h6>Your cart total is</h6>
-   <div class="variable"> 
+<div class="summary-card">
+<div class="thanks text-center">
+<h4 class="one" style="font-weight: bolder;">Thank you for using TNS</h4>
+<br>
+<!-- <h6>Your cart total is</h6> -->
+<!-- <div class="variable">
 
-   </div>
-    <br>  
-    <h6>Estimated time of arrival is 10 minutes</h6>
-    </div>
+</div> -->
+<br>  
+<div class="whitespace" style="margin-bottom: 50px;">
+
+</div>
+<!-- <h6>Estimated time of arrival is 10 minutes</h6> -->
+</div>
 <br>
 <!-- <div class="allovit" style="margin: auto;"> -->
-    <div class="row">
-     <!-- <div class="col-md-6"> -->
-    <!-- <div class="Done"> -->
-      <h6 class="done" style="text-align: center; vertical-align: middle;"><a href="{{ url_for('menu')}}" style="color:black;"> &larr; Order Again</a></h6 >
-    <!-- </div> -->
-    
-    <!-- </div> -->
-    <div class="space">
-    </div>
-    <!-- <div class="col-md-6"> -->
-    <!-- <div class="Done"> -->
-      <h6 class="done" style="text-align: center; color: black; "><a href="{{ url_for('reply')}}" style="color: black;">Leave a reply &#8594;</a></h6 >
-    <!-- </div> -->
-    <!-- </div> -->
-    <!-- </div> -->
+<div class="row">
+ <!-- <div class="col-md-6"> -->
+<div class="Done">
+  <h6 class="done" style="text-align: center; vertical-align: middle;"><a href="{{ url_for('menu')}}" style="color:black;"> &larr; Order Again</a></h6 >
 </div>
-  
 
-    <!-- <div class="Done">
-        <h6 class="done" style="text-align: center; vertical-align: middle;">Order Again</h6 >
-      </div>
-      </div>
-     -->
-    <!-- <button class="again">Lets do it again!</button>
-    <div class="inner-summary-card">
-      
-      <h4 class="comment" style="margin:auto;">Leave us a comment</h4>
-    </div>
-  </div> -->
+<!-- </div> -->
+<div class="space">
+</div>
+<!-- <div class="col-md-6"> -->
+<div class="Done">
+  <h6 class="done" style="text-align: center; color: black; "><a href="{{ url_for('reply')}}" style="color: black;">Leave a reply &#8594;</a></h6 >
+</div>
+<!-- </div> -->
+<!-- </div> -->
+</div>
+
+
+<!-- <div class="Done">
+    <h6 class="done" style="text-align: center; vertical-align: middle;">Order Again</h6 >
+  </div>
+  </div>
+ -->
+<!-- <button class="again">Lets do it again!</button>
+<div class="inner-summary-card">
+  
+  <h4 class="comment" style="margin:auto;">Leave us a comment</h4>
+</div>
+</div> -->
 
 <script>
 var totalCho = JSON.parse(localStorage.getItem("finalFigure"));
 
 var totalHolder = document.getElementsByClassName('variable')[0]
-    var theTotal = document.createElement('div')
-    // var formArray = array.innerHTML
-    var totalContent= `
-    <h1 class="big">Ghc${totalCho}</h1>
-    </div>
-    `
-    
-    theTotal.innerHTML = totalContent
-    totalHolder.append(theTotal)
+var theTotal = document.createElement('div')
+// var formArray = array.innerHTML
+var totalContent= `
+<h1 class="big">Ghc${totalCho}</h1>
+</div>
+`
+
+theTotal.innerHTML = totalContent
+totalHolder.append(theTotal)
 </script>
 
 </body>
 </html>
-{% endblock %} 

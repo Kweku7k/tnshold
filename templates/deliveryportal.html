@@ -51,13 +51,8 @@
                 <th>Room</th>
                 <th>Number</th>
                 <th>A. Number</th>
-                <!-- <th>Food</th> -->
+                <th>Food</th>
                 <th>Total</th>
-                <!-- <th>Status</th>
-                <th>Incoming</th> -->
-                <!-- <th>Shipped</th>
-                <th>Delivered</th> -->
-                <!-- <th>Price</th> -->
             </tr>
             {% for order in all_orders %}
             <tr>
@@ -68,13 +63,8 @@
                 <th>{{order.room}}</th>
                 <th>{{order.pNumber}}</th>
                 <th>{{order.aNumber}}</th>
-                <!-- <th>{{order.food}}</th> -->
+                <th>{{order.food}}</th>
                 <th>{{order.total}}</th>
-                <!-- <th>{{order.status}}</th>
-                <th>{{order.date_created}}</th> -->
-                <!-- <th>{{order.date_created}}</th>
-                <th>{{order.date_created}}</th> -->
-                <!-- <th>Price</th> -->
             </tr>
             {% endfor %}
             </table>

@@ -18,6 +18,7 @@ class Order(db.Model):
     block = db.Column(db.String(100))
     total = db.Column(db.String(10))
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
+    vendor = db.Column(db.String(50))
 
     def __repr__(self):
         return '<Order %r>' % self.name
@@ -69,9 +70,10 @@ def index():
         order_hostel = request.form['hostel']
         order_block = request.form['block']
         order_total = request.form['total']
+        order_vendor = request.form['vendor']
 
         identify = Order.id
-        final_order = Order(name=order_name, pNumber=order_pnumber, room=order_room, aNumber=order_anumber, food=order_food, hostel=order_hostel, block=order_block, total=order_total)
+        final_order = Order(name=order_name, pNumber=order_pnumber, room=order_room, aNumber=order_anumber, food=order_food, hostel=order_hostel, block=order_block, total=order_total, vendor=order_vendor)
         # user_number = Order(pNumber=order_pnumber)
         # user_room = Order(room=order_room)
         # order_anumber = request.form['aphone']
@@ -100,7 +102,8 @@ def index():
    
 @app.route('/chart', methods=['POST','GET'])
 def masterchart():
-    return ('chart.html')
+    all_orders = Order.query.order_by(Order.date_created).all()
+    return render_template('chart.html', all_orders=all_orders)
 
 @app.route('/new')
 def new():
@@ -117,12 +120,102 @@ def vendors():
 
 @app.route('/delivery')
 def delivery():
+    # if request.method == 'POST':
+    #     vendor = request.form['username'] 
+    #     password = request.form['password']
+    #     if (vendor === "Kweku" || password === "Aloo")
+    #     {
+    #         return redirect('deliveryportal.html')
+    #     }
+    #     else:
+    #         return ("Sorry, that didnt work...")
+
+    # }
+    # else{
     return render_template('delivery.html')
 
-@app.route('/deliveryportal')
-def deliveryportal():
-    all_orders = Order.query.order_by(Order.date_created).all()
-    return render_template('deliveryportal.html', all_orders=all_orders)
+    # }
+# --------------------vendors-----------------------
+@app.route('/anything', methods=['POST','GET'])
+def anything():
+    return render_template('anything.html')
+
+@app.route('/hotoven', methods=['POST','GET'])
+def hotoven():
+    return render_template('hotoven.html')
+
+@app.route('/indomiebar', methods=['POST','GET'])
+def indomiebar():
+    return render_template('indomiebar.html')
+
+@app.route('/spectra', methods=['POST','GET'])
+def spectra():
+    return render_template('spectra.html')
+
+
+@app.route('/deliveryportal', methods=['POST','GET'])
+def deliveryportal():   
+    if request.method == 'POST':
+        vendor = request.form['username'] 
+        password = request.form['password']
+        TNS = "Kweku"
+        TNSpass = "123"
+        Shawarma ="Sha"
+        ShawarmaPass = "Sha"
+        Sobolo = "Nana Esi"
+        SoboloPass = "SOBOLO"
+        # anything
+        anything = "niijunior120@gmail.com"
+        anythingPass = "anypassword"
+        # The Indomie Bar
+        indomiebar = "claudiaboateng8@gmail.com"
+        indomiePass = "claudia07"
+        # Spectra's Kitchen
+        spectra = "specsforlife590@gmail.com"
+        spectraPass = "Dreamers"
+
+
+
+        if vendor == TNS and password == TNSpass:
+            # all_orders = Order.query.order_by(Order.id).all()
+            all_orders = Order.query.order_by(Order.id).all()
+            return render_template('deliveryportal.html', all_orders=all_orders)
+    
+        elif vendor == Shawarma and password == ShawarmaPass:
+            # all_orders = Order.query.order_by(Order.id).all()
+            all_orders = Order.query.filter_by(vendor = "Test Vendor 1").all()
+            return render_template('deliveryportal.html', all_orders=all_orders)
+
+
+        elif vendor == Sobolo and password == SoboloPass:
+            # all_orders = Order.query.order_by(Order.id).all()
+            all_orders = Order.query.filter_by(vendor = "Test Vendor 2").all()
+            return render_template('deliveryportal.html', all_orders=all_orders)
+
+        elif vendor == anything and password == anythingPass:
+            # all_orders = Order.query.order_by(Order.id).all()
+            all_orders = Order.query.filter_by(vendor = "Test Vendor 2").all()
+            return render_template('deliveryportal.html', all_orders=all_orders)
+        
+        elif vendor == indomiebar and password == indomiePass:
+            # all_orders = Order.query.order_by(Order.id).all()
+            all_orders = Order.query.filter_by(vendor = "The Indomie Bar").all()
+            return render_template('deliveryportal.html', all_orders=all_orders)
+        
+        elif vendor == spectra and password == spectraPass:
+            # all_orders = Order.query.order_by(Order.id).all()
+            all_orders = Order.query.filter_by(vendor = "Spectra's Kitchen").all()
+            return render_template('deliveryportal.html', all_orders=all_orders)
+
+        
+        else:
+            return ("Sorry, that didnt work...")
+
+    
+    else:
+        # all_orders = Order.query.order_by(Order.date_created).all()
+        return ('Kwasia')
+        # return render_template('deliveryportal.html', all_orders=all_orders)
 
 @app.route('/reply')
 def reply():
@@ -143,7 +236,7 @@ def complaints():
         db.session.commit()
         all_issues = Complaints.query.all()
         print (all_issues)
-        return render_template('issues.html', all_issues=all_issues )
+        return render_template('final.html', all_issues=all_issues )
 
     else:
         return "Sorry, didnt work..."
@@ -152,6 +245,10 @@ def complaints():
 @app.route('/invoice')
 def invoice():
     return render_template('invoice.html')
+
+@app.route('/ourvendors')
+def ourvendors():
+    return render_template('vendors.html')
 
 
 if __name__ == "__main__":
