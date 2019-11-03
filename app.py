@@ -118,14 +118,15 @@ def vendors():
     all_orders = Order.query.order_by(Order.date_created).all()
     return render_template('vendorportal.html', all_orders=all_orders)
 
-@app.route('/delete/<int:id>')
+@app.route('/delete/<int:id>', methods=['POST'])
 def delete(id):
     order_to_delete = Order.query.get_or_404(id)
 
     # try:
     db.session.delete(order_to_delete)
     db.session.commit()
-    return redirect('/delivery')
+#    return render_template('delivery')
+    return redirect('/deliveryportal')
     # except:
         # return 'There was a problem deleting that order'
 
