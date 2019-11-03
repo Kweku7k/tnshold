@@ -118,6 +118,19 @@ def vendors():
     all_orders = Order.query.order_by(Order.date_created).all()
     return render_template('vendorportal.html', all_orders=all_orders)
 
+@app.route('/delete/<int:id>')
+def delete(id):
+    order_to_delete = Order.query.get_or_404(id)
+
+    # try:
+    db.session.delete(order_to_delete)
+    db.session.commit()
+    return redirect('/delivery')
+    # except:
+        # return 'There was a problem deleting that order'
+
+
+
 @app.route('/delivery')
 def delivery():
     # if request.method == 'POST':
@@ -134,7 +147,7 @@ def delivery():
     # else{
     return render_template('delivery.html')
 
-    # }
+    # }, all_orders=all_orders
 # --------------------vendors-----------------------
 @app.route('/anything', methods=['POST','GET'])
 def anything():
@@ -214,8 +227,8 @@ def deliveryportal():
     
     else:
         # all_orders = Order.query.order_by(Order.date_created).all()
-        return ('Kwasia')
-        # return render_template('deliveryportal.html', all_orders=all_orders)
+        # return ('Sorry, epic system failure. Please contact administrator on 0545977791')
+        return render_template('deliveryportal.html', )
 
 @app.route('/reply')
 def reply():
