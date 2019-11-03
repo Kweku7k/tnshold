@@ -53,6 +53,7 @@
                 <th>A. Number</th>
                 <th>Food</th>
                 <th>Total</th>
+                <th>Time</th>
                 <th>Actions</th>
             </tr>
             {% for order in all_orders %}
@@ -66,6 +67,7 @@
                 <th>{{order.aNumber}}</th>
                 <th>{{order.food}}</th>
                 <th>{{order.total}}</th>
+                <th>{{ order.date_created.time()}}</th>
                 <th><a href="/delete/{{order.id}}">Done</a></th>
             </tr>
             {% endfor %}

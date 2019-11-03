@@ -166,6 +166,10 @@ def indomiebar():
 def spectra():
     return render_template('spectra.html')
 
+@app.route('/immaculate', methods=['POST','GET'])
+def immaculate():
+    return render_template('immaculate.html')
+
 
 @app.route('/deliveryportal', methods=['POST','GET'])
 def deliveryportal():   
@@ -187,6 +191,10 @@ def deliveryportal():
         # Spectra's Kitchen
         spectra = "specsforlife590@gmail.com"
         spectraPass = "Dreamers"
+        # Immaculate Bites
+        Immaculate= "awurabena66@gmail.com"
+        ImmaculatePass = "002126"
+        
 
 
 
@@ -219,6 +227,11 @@ def deliveryportal():
         elif vendor == spectra and password == spectraPass:
             # all_orders = Order.query.order_by(Order.id).all()
             all_orders = Order.query.filter_by(vendor = "Spectra's Kitchen").all()
+            return render_template('deliveryportal.html', all_orders=all_orders)
+        
+        elif vendor == Immaculate and password == ImmaculatePass:
+            # all_orders = Order.query.order_by(Order.id).all()
+            all_orders = Order.query.filter_by(vendor = "Immaculate Bites").all()
             return render_template('deliveryportal.html', all_orders=all_orders)
 
         
