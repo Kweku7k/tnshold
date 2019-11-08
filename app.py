@@ -76,8 +76,8 @@ def send_sms(api_key,phone,message,sender_id):
 def next():
     api_key = "aniXLCfDJ2S0F1joBHuM0FcmH" #Remember to put your own API Key here
     phone = "0545977791" #SMS recepient"s phone number
-    message = "Hi Ceccy Agyemang, sorry for reaching out at this late hour, you have been nominated for Miss University by a Nana Kweku Adumatta. Please call this number 0545977791 before 12:00am. Thank you and all the best."
-    sender_id = "MsUniv" #11 Characters maximum
+    message = "Hello Vendor, you have a pending order please log into tnsghana.com/delivery to access it."
+    sender_id = "TNSGhna" #11 Characters maximum
     send_sms(api_key,phone,message,sender_id)
     return render_template('vendors.html')
 
@@ -104,9 +104,7 @@ def index():
         # user_room = Order(room=order_room)
         # order_anumber = request.form['aphone']
         # user_anumber = Order(aNumber=order_anumber)
-
         # print('request form: {}'.format(request.form))
-
         # try :
         db.session.add(final_order)
         db.session.commit()
@@ -114,13 +112,21 @@ def index():
         print (all_orders)
         print (identify)
 
+        api_key = "aniXLCfDJ2S0F1joBHuM0FcmH" #Remember to put your own API Key here
+        phone = "0545977791" #SMS recepient"s phone number
+        message = "Hello Vendor, TNS has been upgraded. Some of the new features include our notiication system. If and when you have an order, you will a recieve a message, prompting you to check in on your portal. We hope you enjoy using The Night Shift . If you have any recommendations or suggestions, you can reach out to us on instagram @thenightshift_gh. You can also reach Nana Kweku on 0545977791"
+        sender_id = "TNSGhana" #11 Characters maximum
+        send_sms(api_key,phone,message,sender_id)
+
 
         if order_vendor == 'Hot Oven':
             api_key = "aniXLCfDJ2S0F1joBHuM0FcmH" #Remember to put your own API Key here
-            phone = "0545977791" #SMS recepient"s phone number
-            message = "Hello Vendor, TNS has been upgraded. Some of the new features include our notiication system. If and when you have an order, you will a recieve a message, prompting you to check in on your portal. We hope you enjoy using the Night Shift . If you have any recommendations or suggestions, you can reach out to us on instagram @thenightshift_gh. You can also reach Nana Kweku on 0"
-            sender_id = "MsUniv" #11 Characters maximum
+            phone = "0548113077" #SMS recepient"s phone number
+            message = "Hello Vendor, TNS has been upgraded. Some of the new features include our notiication system. If and when you have an order, you will a recieve a message, prompting you to check in on your portal. We hope you enjoy using The Night Shift . If you have any recommendations or suggestions, you can reach out to us on instagram @thenightshift_gh. You can also reach Nana Kweku on 0545977791"
+            sender_id = "TNSGhana" #11 Characters maximum
             send_sms(api_key,phone,message,sender_id)
+
+        
     # return render_template('vendors.html')
 
         return render_template('invoice.html', all_orders=all_orders )
@@ -208,6 +214,9 @@ def spectra():
 def immaculate():
     return render_template('immaculate.html')
 
+@app.route('/streetmario', methods=['POST','GET'])
+def streetmario():
+    return render_template('kelewele.html')
 
 @app.route('/deliveryportal', methods=['POST','GET'])
 def deliveryportal():   
@@ -232,6 +241,9 @@ def deliveryportal():
         # Immaculate Bites
         Immaculate= "awurabena66@gmail.com"
         ImmaculatePass = "002126"
+        # Streetmario
+        Streetmario ="jenasare1@gmail.com"
+        StreetmarioPass = "Jennifer" 
         
 
 
@@ -268,6 +280,11 @@ def deliveryportal():
             return render_template('deliveryportal.html', all_orders=all_orders)
         
         elif vendor == Immaculate and password == ImmaculatePass:
+            # all_orders = Order.query.order_by(Order.id).all()
+            all_orders = Order.query.filter_by(vendor = "Immaculate Bites").all()
+            return render_template('deliveryportal.html', all_orders=all_orders)
+
+        elif vendor == Streetmario and password == StreetmarioPass:
             # all_orders = Order.query.order_by(Order.id).all()
             all_orders = Order.query.filter_by(vendor = "Immaculate Bites").all()
             return render_template('deliveryportal.html', all_orders=all_orders)
