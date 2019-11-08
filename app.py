@@ -59,30 +59,28 @@ def move():
         # db.session.commit()
         return render_template('test.html', cho=cho)
 
-
-@app.route('/msgtry', methods=['POST','GET'])
 def send_sms(api_key,phone,message,sender_id):
-    #parameters to send SMS
-
-   #Defining variables to be used inside function
-    api_key = 'aniXLCfDJ2S0F1joBHuM0FcmH' #Remember to put your own API Key here
-    phone = '0545977791' #SMS recepient's phone number
-    message = 'TNS beta message test'
-    sender_id = 'TNS Ghana' #11 Characters maximum
-    date_time = "2017-05-02 00:59:00"
-
     # params = {"key": api_key, to}
-    params = {"key":api_key,"to":phone,"msg":message,"sender_id":sender_id,"date_time":date_time}
+    params = {"key":api_key,"to":phone,"msg":message,"sender_id":sender_id}
+
+    # params = {"key\":api_key,\"to\":phone,\"msg\":message,\"sender_id\":sender_id,\"date_time\":date_time}
 
     #prepare your url
-    url = 'https://apps.mnotify.net/smsapi?key='+ urllib.parse.urlencode(params)
- 
-    print(url)
-    content = urllib.request.urlopen(url)
-    # return content
-    #content contains the response from mNotify
-#Calling function that was created to send sms
-    # send_sms(api_key,phone,message,sender_id)
+    url = 'https://apps.mnotify.net/smsapi?'+ urllib.parse.urlencode(params)
+    # print(url)
+    content = urllib.request.urlopen(url).read()
+    print (content)
+
+
+@app.route('/msgtry', methods=['POST','GET'])
+def next():
+    api_key = "aniXLCfDJ2S0F1joBHuM0FcmH" #Remember to put your own API Key here
+    phone = "0545977791" #SMS recepient"s phone number
+    message = "Hi Ceccy Agyemang, sorry for reaching out at this late hour, you have been nominated for Miss University by a Nana Kweku Adumatta. Please call this number 0545977791 before 12:00am. Thank you and all the best."
+    sender_id = "MsUniv" #11 Characters maximum
+    send_sms(api_key,phone,message,sender_id)
+    return render_template('vendors.html')
+
 # return render_template('ourvendors.html')
 
 
@@ -117,6 +115,14 @@ def index():
         print (identify)
 
 
+        if order_vendor == 'Hot Oven':
+            api_key = "aniXLCfDJ2S0F1joBHuM0FcmH" #Remember to put your own API Key here
+            phone = "0545977791" #SMS recepient"s phone number
+            message = "Hello Vendor, TNS has been upgraded. Some of the new features include our notiication system. If and when you have an order, you will a recieve a message, prompting you to check in on your portal. We hope you enjoy using the Night Shift . If you have any recommendations or suggestions, you can reach out to us on instagram @thenightshift_gh. You can also reach Nana Kweku on 0"
+            sender_id = "MsUniv" #11 Characters maximum
+            send_sms(api_key,phone,message,sender_id)
+    # return render_template('vendors.html')
+
         return render_template('invoice.html', all_orders=all_orders )
 
         # return render_template('invoice.html', )
@@ -128,8 +134,10 @@ def index():
     else:
         all_orders = Order.query.order_by(Order.date_created).all()
         return render_template('index.html', all_orders=all_orders)
+
+        
  
-   
+    
 @app.route('/chart', methods=['POST','GET'])
 def masterchart():
     all_orders = Order.query.order_by(Order.date_created).all()

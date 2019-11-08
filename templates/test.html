@@ -27,6 +27,8 @@
       <option>--Choose</option>
       <option>Boys Hostel</option>
       <option>Pronto</option>
+      <option>Old Girls</option>
+
       <!-- <option>Old Girls</option> -->
     </select>
   </div>
@@ -128,6 +130,33 @@ function anothername() {
           `
           holder.innerHTML = form
           formHolder.append(holder)
+    }
+    else if (hostel === 'Old Girls'){
+      var sholder = document.getElementsByClassName('female')[0]
+      var sholder3 = document.getElementsByClassName('male')[0]
+
+      console.log(sholder)
+      if (sholder !== undefined || sholder3 !== undefined){
+        sholder.remove();
+      }
+      else{
+        sholder3.remove();
+      }
+
+      
+      var formHolder = document.getElementsByClassName('test')[0] 
+      var holder = document.createElement('div')
+      var form = ` 
+    <select class="male form-control" id="boys" name="block" required>
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+      <option>D</option>
+    </select>
+  </div>
+      `
+      holder.innerHTML = form
+      formHolder.append(holder)
     }
   
     console.log(hostel)
