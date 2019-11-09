@@ -76,7 +76,7 @@ def send_sms(api_key,phone,message,sender_id):
 def next():
     api_key = "aniXLCfDJ2S0F1joBHuM0FcmH" #Remember to put your own API Key here
     phone = "0545977791" #SMS recepient"s phone number
-    message = "Hello Vendor, you have a pending order please log into tnsghana.com/delivery to access it."
+    message = "You might have a customer soon...."
     sender_id = "TNSGhna" #11 Characters maximum
     send_sms(api_key,phone,message,sender_id)
     return render_template('vendors.html')
@@ -121,7 +121,7 @@ def index():
 
         if order_vendor == 'Hot Oven':
             api_key = "aniXLCfDJ2S0F1joBHuM0FcmH" #Remember to put your own API Key here
-            phone = "0548113077" #SMS recepient"s phone number
+            phone = "0202558623" #SMS recepient"s phone number
             message = "Hello Vendor, TNS has been upgraded. Some of the new features include our notiication system. If and when you have an order, you will a recieve a message, prompting you to check in on your portal. We hope you enjoy using The Night Shift . If you have any recommendations or suggestions, you can reach out to us on instagram @thenightshift_gh. You can also reach Nana Kweku on 0545977791"
             sender_id = "TNSGhana" #11 Characters maximum
             send_sms(api_key,phone,message,sender_id)
@@ -218,6 +218,10 @@ def immaculate():
 def streetmario():
     return render_template('kelewele.html')
 
+@app.route('/iklina', methods=['POST','GET'])
+def iklina():
+    return render_template('iklina.html')
+
 @app.route('/deliveryportal', methods=['POST','GET'])
 def deliveryportal():   
     if request.method == 'POST':
@@ -244,6 +248,13 @@ def deliveryportal():
         # Streetmario
         Streetmario ="jenasare1@gmail.com"
         StreetmarioPass = "Jennifer" 
+        # Ikilina
+        Iklina = "Iklina"
+        IklinaPass = "Password"
+
+
+
+
         
 
 
@@ -287,6 +298,11 @@ def deliveryportal():
         elif vendor == Streetmario and password == StreetmarioPass:
             # all_orders = Order.query.order_by(Order.id).all()
             all_orders = Order.query.filter_by(vendor = "Immaculate Bites").all()
+            return render_template('deliveryportal.html', all_orders=all_orders)
+     
+        elif vendor == Iklina and password == IklinaPass:
+            # all_orders = Order.query.order_by(Order.id).all()
+            all_orders = Order.query.filter_by(vendor = "Iklina").all()
             return render_template('deliveryportal.html', all_orders=all_orders)
 
         
