@@ -75,7 +75,7 @@ def send_sms(api_key,phone,message,sender_id):
 @app.route('/msgtry', methods=['POST','GET'])
 def next():
     api_key = "aniXLCfDJ2S0F1joBHuM0FcmH" #Remember to put your own API Key here
-    phone = "0571963820" #SMS recepient"s phone number
+    phone = "0545977791" #SMS recepient"s phone number
     message = "You might have a customer soon...."
     sender_id = "TNSGhna" #11 Characters maximum
     send_sms(api_key,phone,message,sender_id)
