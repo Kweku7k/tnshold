@@ -4,7 +4,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
@@ -14,12 +13,10 @@
     <title>The Night Shift</title>             
   </head>
 
-
   <body style="background: white;">
 
-
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-        <a class="navbar-brand" href="{{ url_for('start')}},">TNS</a>
+        <a class="navbar-brand" href="{{ url_for('next')}},">TNS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -40,14 +37,16 @@
       </nav>
 <div class="whitespace" style="height: 20px;"></div>
 
-<h4>The currently available vendors are:</h4>
+<!-- <div class="container">   -->
+  <h4 style="margin-left: 20px;">The currently available vendors are:</h4>
+<!-- </div> -->
 
 
 <!-- --------------------------------start----------------------------- -->
 <div class="vcard">
-  <a href="{{ url_for('menu')}}">
+  <a href="{{ url_for('schoolpac')}}">
 <h6 class="vend" style="padding-left:10%; line-height: 45px; text-align: left; vertical-align: middle;">
-  Hot Oven
+  School Pac
 </h6>
 
 </a>   

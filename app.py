@@ -75,14 +75,13 @@ def send_sms(api_key,phone,message,sender_id):
 @app.route('/msgtry', methods=['POST','GET'])
 def next():
     api_key = "aniXLCfDJ2S0F1joBHuM0FcmH" #Remember to put your own API Key here
-    phone = "0545977791" #SMS recepient"s phone number
+    phone = "0571963820" #SMS recepient"s phone number
     message = "You might have a customer soon...."
     sender_id = "TNSGhna" #11 Characters maximum
     send_sms(api_key,phone,message,sender_id)
     return render_template('vendors.html')
 
 # return render_template('ourvendors.html')
-
 
 @app.route('/test', methods=['POST','GET'])
 def index():
@@ -113,18 +112,15 @@ def index():
         print (identify)
 
         api_key = "aniXLCfDJ2S0F1joBHuM0FcmH" #Remember to put your own API Key here
-        phone = "0545977791" #SMS recepient"s phone number
-        message = "Hello Vendor, TNS has been upgraded. Some of the new features include our notiication system. If and when you have an order, you will a recieve a message, prompting you to check in on your portal. We hope you enjoy using The Night Shift . If you have any recommendations or suggestions, you can reach out to us on instagram @thenightshift_gh. You can also reach Nana Kweku on 0545977791"
+        phone = "0553976610" #SMS recepient"s phone number
+        message ="You have an order from " + order_name + " in " + order_hostel + " block " + order_block + " room " + order_room + " for " + order_food + " You can call on " + order_pnumber
         sender_id = "TNSGhana" #11 Characters maximum
         send_sms(api_key,phone,message,sender_id)
 
+ 
+       
 
-        if order_vendor == 'Hot Oven':
-            api_key = "aniXLCfDJ2S0F1joBHuM0FcmH" #Remember to put your own API Key here
-            phone = "0202558623" #SMS recepient"s phone number
-            message = "Hello Vendor, TNS has been upgraded. Some of the new features include our notiication system. If and when you have an order, you will a recieve a message, prompting you to check in on your portal. We hope you enjoy using The Night Shift . If you have any recommendations or suggestions, you can reach out to us on instagram @thenightshift_gh. You can also reach Nana Kweku on 0545977791"
-            sender_id = "TNSGhana" #11 Characters maximum
-            send_sms(api_key,phone,message,sender_id)
+            
 
         
     # return render_template('vendors.html')
@@ -209,6 +205,10 @@ def indomiebar():
 @app.route('/spectra', methods=['POST','GET'])
 def spectra():
     return render_template('spectra.html')
+
+@app.route('/schoolpac', methods=['POST','GET'])
+def schoolpac():
+    return render_template('schoolpac.html')
 
 @app.route('/immaculate', methods=['POST','GET'])
 def immaculate():
