@@ -122,6 +122,12 @@ def index():
         message ="You have an order from " + order_name + " in " + order_hostel + " block " + order_block + " room " + order_room + " for " + order_food + " You can call on " + order_pnumber
         sender_id = "TNSGhana" #11 Characters maximum
         send_sms(api_key,phone,message,sender_id)
+
+        api_key = "aniXLCfDJ2S0F1joBHuM0FcmH" #Remember to put your own API Key here
+        phone = "0262283506" #SMS recepient"s phone number
+        message ="You have an order from " + order_name + " in " + order_hostel + " block " + order_block + " room " + order_room + " for " + order_food + " You can call on " + order_pnumber
+        sender_id = "TNSGhana" #11 Characters maximum
+        send_sms(api_key,phone,message,sender_id)
        
 
             
