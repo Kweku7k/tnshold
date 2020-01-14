@@ -83,6 +83,17 @@ def next():
 
 # return render_template('ourvendors.html')
 
+
+
+@app.route('/temp', methods=['POST','GET'])
+def temp():
+    return render_template('wbtt.html')
+
+@app.route('/tempdescription', methods=['POST','GET'])
+def tempdescription():
+    return render_template('new-description.html')
+
+
 @app.route('/test', methods=['POST','GET'])
 def index():
     if request.method == 'POST' :

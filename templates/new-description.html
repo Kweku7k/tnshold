@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<div class="description-image">
+    <img src="{{ url_for('static',filename='img/Basillisa 2 (1).png')}}" style="width: 100%;">
+
+</div>
+
+<!-- <img -->
+<div class="description-card">
+    <div class="row" id="desc-card">
+        <div class="description-titles">
+            <h6 class="description-disabled">IMMACULATE</h6>
+            <h3 class="description-header">Toasted <br> French Fries</h3>
+        </div>
+
+        <div class="description-prices">
+            <h6 class="description-disabled">PRICE</h6>
+            <h3 class="description-header">Ghc20.00</h3>
+        </div>
+    </div>
+
+
+            <h6 class="description-disabled" id="description-label">DESCRIPTION</h6>
+            <h3 class="description-body">So you dier I have given you all of this space to express yourself, if you like fool you willl see what I will do to you erh</h3>
+    <div class="description-action-buttons">
+        <i class="fas fa-plus-circle fa-2x" id="desc-button"></i>
+        <span id="desc-button">0</span>
+        <i class="fas fa-minus-circle fa-2x" id="desc-button"></i>
+
+        <button class="add-to-cart">Add TO Cart</button>
+    </div>
+</div>
+
+
+{% endblock %}
