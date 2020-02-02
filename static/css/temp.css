@@ -1,0 +1,40 @@
+body{
+    background-color: rgba(240, 240, 240, 0.7);
+}
+
+.section-one{
+    margin: 10%;
+}
+
+.heading{
+    /* size: 10px; */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.support{
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.the-forms{
+    margin: 10%;
+}
+
+.all{
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    padding-bottom: 0;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.09); 
+}
+
+#exampleInputEmail1{
+    border: none;
+    /* background-color: none; */
+}
+
+#label1{
+    color: teal;
+    font-weight: bold;
+}

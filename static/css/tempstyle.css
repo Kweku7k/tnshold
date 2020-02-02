@@ -1,0 +1,21 @@
+.v-title{
+    /* font-family: 'Poppins', sans-serif; */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.v-side{
+    color: #c4c4c4;
+}
+
+.ve{
+    margin-bottom: 5%;
+}
+
+#yes{
+    color: yellow;
+}
+
+.vendor{
+    font-weight: bold;
+}

@@ -21,3 +21,29 @@ send_sms(api_key,phone,message,sender_id)
 
 # return render_template('ourvendors.html')
 
+
+
+<div class="push row">
+    <!-- start------------- -->
+    <div class="vending-image">
+        <img src="{{ url_for('static',filename='img/Exotic1.jpg')}}">
+    </div>
+    <div class="vending-name">
+<h6 class="main">African Eats</h6>
+<h6 class="support">JHHJ</h6>
+    </div>
+    <!-- end------------- -->
+
+    <!-- start------------- -->
+    <div class="vending-image">
+        <img src="{{ url_for('static',filename='img/Exotic1.jpg')}}">
+    </div>
+    <div class="vending-name">
+<h6 class="main">African Eats</h6>
+<h6 class="support">JHHJ</h6>
+    </div>
+    <!-- end------------- -->
+
+
+
+</div>

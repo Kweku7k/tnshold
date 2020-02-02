@@ -54,7 +54,7 @@ section .section-title {
 }
 
 .mobile-top{
-    margin: 20px;
+    margin: 10px;
 }
 
 .cho-card-2{
@@ -387,4 +387,8 @@ box-shadow: 7px 10px 5px 0px rgba(185, 169, 169, 0.75);
     /* font-weight: light`; */
     /* margin-top: -2%; */
     color: #c4c4c4;
+}
+.v-side{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }

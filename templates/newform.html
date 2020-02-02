@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/temp.css')}}">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,600&display=swap" rel="stylesheet">
+
+{% endblock %}
+
+{% block body %}
+
+<section class="section-one">
+    <h4 class="heading">We need a little more information in order to confirm your order</h4>
+    <h6 class="support">Please fill this form real quick</h6>
+</section>
+
+<section class="the-forms">
+    <form>
+      <div class="all">
+        <div class="form-group">
+          <label for="exampleInputEmail1" id="label1">Name</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+      </div>
+
+      <div class="all">
+        <div class="form-group">
+          <label for="exampleInputEmail1" id="label1">Name</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+      </div>
+      </form>
+</section>
+    {% endblock %}
+
+
