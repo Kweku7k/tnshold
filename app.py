@@ -69,7 +69,7 @@ def send_sms(api_key,phone,message,sender_id):
 def next():
     api_key = "aniXLCfDJ2S0F1joBHuM0FcmH" #Remember to put your own API Key here
     phone = "0545977791" #SMS recepient"s phone number
-    message = "Hello Nana Paitoo, it has come to our notice that your Grade Point Average has fallen below the standard of the School. You are expected to bring your parent/guardian to the Deans Office on Monday 27th January 2020. Please call 0578660248 as soon as you get this message. Have a good day"
+    message = "Its workingggg"
     sender_id = "KNUST-Admin" #11 Characters maximum
     send_sms(api_key,phone,message,sender_id)
     return render_template('vendors.html')
