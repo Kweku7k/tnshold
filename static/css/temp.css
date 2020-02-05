@@ -31,10 +31,54 @@ body{
 
 #exampleInputEmail1{
     border: none;
+    padding-top: 0;
     /* background-color: none; */
 }
 
 #label1{
     color: teal;
     font-weight: bold;
+    margin-bottom: 0;
 }
+
+
+
+.inline{
+    width: 40%;
+    display: inline-flex;
+    margin-left: auto;
+    margin-bottom: 5%;
+
+}
+
+.woosh{
+    width:10%;
+    height: 10px;
+    display: inline-flex;
+}
+
+#inline-1{
+    width: 70%;
+}
+
+#inline-2{
+    width: 25%;
+}
+
+.button {
+    position: fixed;
+    bottom: 0;
+    background-color: teal;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    left: 0;
+    /* height: 80px; */
+    border-radius: 16px;
+    width: 100%;
+  }
