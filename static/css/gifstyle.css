@@ -1,0 +1,33 @@
+html,body{
+  height: 100%;
+}
+.bg{
+    /* The image used */
+    background-image: url("../img/one.gif");
+  
+    /* Full height */
+    height: 100%; 
+    width: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .gif{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+    text-align: center;
+    /* padding-top: 45%; */
+  }
+
+#hungry{
+  padding-top: 85%;
+  font-size: 30px; 
+}
+
+#eat{
+  font-size: large;
+}
