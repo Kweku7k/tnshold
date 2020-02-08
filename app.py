@@ -85,9 +85,9 @@ def tempform():
 def tempstart():
     return render_template('gif.html')
 
-
-
-
+@app.route('/tempstartcopy', methods=['POST','GET'])
+def tempstartcopy():
+    return render_template('gif copy.html')
 
 @app.route('/temp', methods=['POST','GET'])
 def temp():
@@ -224,9 +224,9 @@ def anything():
 #     return render_template('josephine.html')
 
 
-@app.route('/hotoven', methods=['POST','GET'])
-def hotoven():
-    return render_template('hotoven.html')
+# @app.route('/hotoven', methods=['POST','GET'])
+# def hotoven():
+#     return render_template('hotoven.html')
 
 @app.route('/indomiebar', methods=['POST','GET'])
 def indomiebar():
@@ -351,23 +351,23 @@ def reply():
 
 
 
-@app.route('/complaints', methods=['POST','GET'])
-def complaints():
-    if request.method == 'POST' :
-        issue_name = request.form['com_name']
-        issue_number = request.form['com_number']
-        issue_complaint = request.form['com_complaints']
+# @app.route('/complaints', methods=['POST','GET'])
+# def complaints():
+#     if request.method == 'POST' :
+#         issue_name = request.form['com_name']
+#         issue_number = request.form['com_number']
+#         issue_complaint = request.form['com_complaints']
 
-        issue = Complaints(c_name=issue_name, c_number=issue_number, c_complaints = issue_complaint)
+#         issue = Complaints(c_name=issue_name, c_number=issue_number, c_complaints = issue_complaint)
         
-        db.session.add(issue)
-        db.session.commit()
-        all_issues = Complaints.query.all()
-        print (all_issues)
-        return render_template('final.html', all_issues=all_issues )
+#         db.session.add(issue)
+#         db.session.commit()
+#         all_issues = Complaints.query.all()
+#         print (all_issues)
+#         return render_template('final.html', all_issues=all_issues )
 
-    else:
-        return "Sorry, didnt work..."
+#     else:
+#         return "Sorry, didnt work..."
 
 
 @app.route('/invoice')

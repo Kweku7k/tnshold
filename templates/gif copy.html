@@ -11,17 +11,21 @@
 </head>
 <body>
     <div class="bg">
-        <h4 class="gif" id="hungry"></h4>
-        <h6 class="gif" id="eat" onclick="typeWriter()">Touch me to see your future</h6>
+        <h4 class="gif" id="hungry">Food delivery in less than 15 minutes</h4>
+        <!-- <h6 class="gif" id="eat" onclick="typeWriter()">Touch me to see your future</h6> -->
+        <button class="button">Start Now</button>
     </div>
 
 
 <script>
+
+
+function ready() {
     var i = 0;
     var txt = 'Food delivery in less than 10 minutes.';
     var speed = 170;
     
-    function typeWriter() {
+    // function typeWriter() {
     document.getElementById("eat").style.display = "none"
       if (i < txt.length) {
         document.getElementById("hungry").innerHTML += txt.charAt(i);
