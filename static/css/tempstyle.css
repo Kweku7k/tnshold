@@ -19,3 +19,145 @@
 .vendor{
     font-weight: bold;
 }
+
+.main{
+    padding-top: 10%;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.popin{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    margin-bottom: 0;
+    /* color: blue; */
+
+}
+.another{
+    color: blue;
+}
+
+
+#lil{
+    padding-left: 20px;
+}
+
+body{
+    background-color: rgba(224, 221, 221, 0.562);
+}
+
+#light{
+    font-weight: lighter;
+}
+
+.section-head{
+    width: 30%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    padding-left: 20px;
+}
+
+.elipse{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    background-color: #c4c4c4;
+    /* box-shadow: 20px 39px 47px -23px rgb(0, 0, 0); */
+    /* box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); */
+    /* box-shadow: 10px 10px 14px -1px rgba(122,122,122,1); */
+    /* box-shadow: 0px 10px 14px -1px rgba(122,122,122,1); */
+    /* box-shadow: 0px 0px 14px -1px rgba(122,122,122,1); */
+    /* box-shadow: 0px 0px 14px -7px rgba(122,122,122,1); */
+    box-shadow: 0px 0px 21px -7px rgba(122,122,122,1);
+    /* box-shadow: 13px 6px 21px -7px rgba(122,122,122,1); */   
+    margin-left: 6%;
+}
+
+.topin{
+    font-weight: bold;
+    margin-bottom: 0;
+
+}
+
+.definition{
+    padding-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    width: 60%;
+
+}
+
+#vrow{
+margin-bottom: 10px;
+}
+
+.weak{
+    font-size: 13px;
+    color: rgba(128, 128, 128, 0.897);
+    /* color: black; */
+    font-weight: lighter;
+    font-family: 'Raleway', sans-serif;
+}
+
+.asdf{
+    color: rgba(128, 128, 128, 0.897);
+    margin-top: 15px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    text-align: center; 
+    margin: auto;
+}
+
+
+.holdem{
+    width: 100%;
+    height: 50px;
+    border-radius: 30px 30px 0 0;
+    background-color: rgba(128, 128, 128, 0.527);
+    background-color: blue;
+    position: fixed;
+    bottom: 0;
+}
+
+.support{
+    /* text-align: rigtx; */
+    font-family: 'Raleway', sans-serif;
+}
+
+.yawa{
+    position: fixed;
+    left: auto;
+    right: auto;
+    top: 0;
+    bottom: 0;
+}
+
+.head-image{
+    width: 100%;
+    padding-bottom: 30px;
+}
+  
+  /* Bottom right text */
+  .back {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    /* background-color: black; */
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+    .button {
+        background-color: blue;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 16px;
+        font-family: 'Poppins', sans-serif;
+      }

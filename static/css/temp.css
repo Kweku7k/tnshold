@@ -36,9 +36,10 @@ body{
 }
 
 #label1{
-    color: teal;
+    color: blue;
     font-weight: bold;
     margin-bottom: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -68,7 +69,7 @@ body{
 .button {
     position: fixed;
     bottom: 0;
-    background-color: teal;
+    background-color: blue;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -91,4 +92,8 @@ body{
 
   #pop{
       color: green;
+  }
+
+  .form-control{
+      font-family: 'Raleway', sans-serif;
   }

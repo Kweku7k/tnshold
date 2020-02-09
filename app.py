@@ -93,9 +93,22 @@ def tempstartcopy():
 def temp():
     return render_template('wbtt.html')
 
+@app.route('/tempcart', methods=['POST','GET'])
+def tempcart():
+    return render_template('newcart.html')
+
+@app.route('/tempcopy', methods=['POST','GET'])
+def tempcopy():
+    return render_template('wbtt copy.html')
+
 @app.route('/tempdescription', methods=['POST','GET'])
 def tempdescription():
     return render_template('new-description.html')
+
+
+@app.route('/tempdynamic', methods=['POST','GET'])
+def tempdynamic():
+    return render_template('dynamicpage.html')
 
 
 @app.route('/test', methods=['POST','GET'])
@@ -373,6 +386,11 @@ def reply():
 @app.route('/invoice')
 def invoice():
     return render_template('invoice.html')
+
+
+@app.route('/tempinvoice')
+def tempinvoice():
+    return render_template('tempinvoice.html')
 
 @app.route('/ourvendors')
 def ourvendors():

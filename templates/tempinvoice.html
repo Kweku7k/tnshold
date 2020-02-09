@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/tempstyle.css')}}">
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<div class="mobile-top">
+    <!-- <i class="fas fa-shopping-cart fa-2x"></i> -->
+    <h5 class="popin" id="lil"><span id="light">tns</span><span class="another">ghana.</span></h5>
+</div>
+<div class="menu-card">
+    
+    <div class="container">
+        <div class="scrolling-wrapper">
+        <h5 class="popin" id="pop" style="color: blue;">Your order is being processed.</h5>
+        </div>
+<br>
+
+<div class="cellsss" style="text-align: center;">
+  <h6>Your total is</h6>
+  <h1>Ghc10.00</h1>
+  <h6>Estimated time of arrival is 15 minutes</h6>
+
+</div>
+
+           
+
+                
+    </div>
+    <a href="{{ url_for('tempcopy') }}"><button class="button">Check please!</button></a>
+</div>
+{% endblock %}
