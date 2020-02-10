@@ -91,10 +91,10 @@ html,body{
   font-size: 15px;
 }
 
-#supp{
+/* #supp{
   padding-left: 20px;
   padding-right: 20px;
-}
+} */
 
 
 .holdem{
@@ -102,8 +102,28 @@ position: absolute;
     width: 100px;
     height: 50px;
     top: 50%;
-    left: 50%;
+    left: 45%;
     margin-left: -50px; /* margin is -0.5 * dimension */
     margin-top: -25px; 
     display: block;
+}
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  .copy{
+    text-align: center;
+    margin: auto;
+    margin-left: 30%;
+
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .copy{
+    text-align: center;
+    margin-left: 30%;
+  }
+  
 }
