@@ -109,21 +109,12 @@ position: absolute;
 }
 
 
-@media (min-width: 1025px) and (max-width: 1280px) {
   
   .copy{
     text-align: center;
     margin: auto;
-    margin-left: 30%;
+    /* margin-left: 30%;  */
+    padding-top: 15px;
+    padding-bottom: 15px;
 
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  
-  .copy{
-    text-align: center;
-    margin-left: 30%;
-  }
-  
 }

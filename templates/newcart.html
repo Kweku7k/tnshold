@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="{{ url_for('static',filename='css/tempstyle.css')}}">
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
 {% endblock %}
 
 {% block body %}
@@ -13,7 +14,7 @@
 </div>
 <div class="menu-card">
     
-    <div class="container">
+    <div class="container" id="ol">
         <div class="scrolling-wrapper">
         <h5 class="popin" id="pop" style="color: blue;"><u>Cart</u></h5>
         </div>
@@ -36,7 +37,7 @@
                     <div class="elipse">
                     </div>
                         <div class="definition">
-                            <h6 class="topin">French Fries x1</h6>
+                            <h6 class="topin">French Fries <span id="itquantity">x1</span></h6>
                             <h6 class="weak">Ghc 17.00 </h6>
                         </div>
                         <div class="asdf">
@@ -50,11 +51,10 @@
                         <div class="elipse">
                         </div>
                             <div class="definition">
-                                <h6 class="topin">Rice Crispies x4</h6>
-                                <h6 class="weak">Ghc 17.00 </h6>
+                                <h6 class="topin" id="itname">Rice Crispies x4</h6>
+                                <h6 class="weak" id="itprice">Ghc 17.00 </h6>
                             </div>
                             <div class="asdf">
-                            <!-- <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">add</span> -->
                             <i class="far fa-trash-alt"></i>
         
                         </div>
@@ -64,4 +64,40 @@
     </div>
     <a href="{{ url_for('tempcopy') }}"><button class="button">Check please!</button></a>
 </div>
+
+<script>
+
+    // Recieve data from the option add to cart button
+    var tname = localStorage.getItem("t_name");
+    document.getElementById("itname").innerHTML = tname;
+    console.log(tname)
+
+    var tprice = localStorage.getItem("t_price");
+    document.getElementById("itprice").innerHTML = tprice;
+    console.log(tprice)
+
+    var tquantity = localStorage.getItem("t_quantity");
+    document.getElementById('itquantity').innerHTML = tquantity;
+    console.log(tquantity)
+
+    var tvendor = localStorage.getItem("t_vendor");
+    // document.getElementById("itvendor").innerHTML = tvendor;
+    console.log(tvendor)
+    
+
+    function order(vendor,name, price ,quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+        this.vendor = vendor;
+}
+
+var one = new order(tvendor, tname, tprice, tquantity);
+console.log(one.vendor)
+    // var it_array = {name:tname. price:}
+
+
+
+
+</script>
 {% endblock %}

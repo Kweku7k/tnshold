@@ -28,7 +28,7 @@ function ready() {
     for (var i = 0; i < quantityInputs.length; i++){ 
         var input = quantityInputs[i]
         input.addEventListener('change', quantityChanged)
-}
+}   
     var addToCartButtons = document.getElementsByClassName('addcart')
     for (var i = 0; i < addToCartButtons.length; i++){
         var button = addToCartButtons[i]
