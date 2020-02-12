@@ -37,7 +37,7 @@ class Complaints(db.Model):
 
 @app.route('/')
 def start():
-    return render_template('index.html')
+    return render_template('gif.html')
 
 @app.route('/menu', methods=['POST','GET'])
 def menu():

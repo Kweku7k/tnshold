@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ url_for('static',filename='css/tempstyle.css')}}">
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 {% endblock %}
 
 {% block body %}
@@ -67,7 +67,10 @@
 
 <script>
 
-    // Recieve data from the option add to cart button
+$(document).ready(function(){
+$("#ol").append(tname);
+});
+  // Recieve data from the option add to cart button
     var tname = localStorage.getItem("t_name");
     document.getElementById("itname").innerHTML = tname;
     console.log(tname)
@@ -95,9 +98,5 @@
 var one = new order(tvendor, tname, tprice, tquantity);
 console.log(one.vendor)
     // var it_array = {name:tname. price:}
-
-
-
-
 </script>
 {% endblock %}
