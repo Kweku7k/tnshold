@@ -78,17 +78,16 @@
         <h4 class="view-all-option"><u>View all &#8594;</u></h4>
     </div>
 
-    <a href="{{ url_for('tempdynamic')}}">
+    <a href="{{ url_for('tempdynamic')}}" onclick="pushit();" style="text-decoration: none;">
 <div class="row" id="vrow">
     <div class="elipse">
     </div>
         <div class="definition">
-            <h6 class="topin">Indomie Bar</h6>
-            <h6 class="weak">Yeah Nigga some more texttttt</h6>
+            <h6 class="topin">Pronto Woman</h6>
+            <h6 class="weak">It is hot and spicyyy</h6>
         </div>
-        <div class="asdf">
-            <i class="fas fa-shopping-bag fa-2x"></i>
-
+        <div class="asdf" style="color: blue;">
+online
         </div>
     </div>
     </a>
@@ -99,10 +98,10 @@
     </div>
         <div class="definition">
             <h6 class="topin">School Pac</h6>
-            <h6 class="weak">Yeah Nigga some more texttttt</h6>
+            <h6 class="weak">We have everything some.</h6>
         </div>
         <div class="asdf">
-            Ghc 20.00
+            offline
         </div>
     </div>
     </a>
@@ -116,7 +115,7 @@
             <h6 class="weak">Yeah Nigga some more texttttt</h6>
         </div>
         <div class="asdf">
-            Ghc 20.00
+            offline
         </div>
     </div>
 
@@ -127,8 +126,8 @@
                 <h6 class="topin">Pronto</h6>
                 <h6 class="weak">Yeah Nigga some more texttttt</h6>
             </div>
-            <div class="asdf">
-                Ghc 20.00
+            <div class="asdf" style="color:blue ;">
+                online
             </div>
         </div>
 <!-- </div> -->
@@ -187,12 +186,51 @@
     
 </div>
     
+
+</div>
     
 </section>
 
+
+<div class="popup">
+ <div class="pop-card">
+     <div class="pop-support" style="font-weight: bold; color: blue;";>
+         We're offline
+     </div>
+     <div class="pop-head">
+         <h6>None of our vendors are currently online. You can leave your number, we will send you an sms at 6:00pm, thank you.</h6>
+         <form action="/tempcopysms" method="POST" >
+            <div class="form-group" >
+              <label for="exampleInputEmail1" style="font-weight: bold;">Phone Number</label>
+              <input type="number" class="form-control" name = "aphone" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your number">
+              <!-- <small id="emailHelp" class="form-text text-muted">Yo</small> -->
+            </div>
+            <a href="{{url_for('subscribe')}}"><button type="submit" class="btn btn-primary">Submit</button></a>
+          </form>
+        </div>
+
+ </div>
+</div>
 <!-- <div class="holdem"></div> -->
 
 </div>
 
+<script>
+
+function pushit(){
+var button = event.target;
+this.button
+
+
+localStorage.setItem("dy_vendor", it_vendor);
+localStorage.setItem("dy_price", it_price);
+localStorage.setItem("dy_title", );
+localStorage.setItem("dy_name", it_price);
+
+
+    
+}
+
+</script>
 
 {% endblock %}

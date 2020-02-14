@@ -7,7 +7,10 @@
 {% endblock %}
 
 {% block body %}
-<div class="description-image">
+<div class="description-image" style="position: relative;">
+    <div class="back">
+        <a href="{{ url_for('tempcopy') }}"><i class="fas fa-angle-left"></i><span>Back</span></a>
+        </div>
     <img src="{{ url_for('static',filename='img/Basillisa 2 (1).png')}}" style="width: 100%;">
 
 </div>
@@ -34,14 +37,31 @@
         <input type="number" id="counter" value="1"></span>
         <i class="fas fa-minus-circle fa-2x" id="desc-button" onclick="minus()"></i>
 
-        <button class="add-to-cart" style="background-color: blue; margin-left: auto; color: white;" onclick="pushToLs()">Add TO Cart</button>
+        <button class="add-to-cart" id="add-to-carts"  style="background-color: grey; margin-left: auto; color: white;" onclick="pushToLs()">Add To Cart</button>
     </div>
+
 </div>
 
 <!-- input(type="text" value="2") -->
+<a href="{{ url_for('tempcart') }}">
+    <div class="route" id="route">
+        Go to cart &#8614;
+    </div>
+</a>
+
 
 <script>
+    
+    var name = localStorage.getItem("dynamicnamee");
+    document.getElementById('it_name').innerHTML = name;
+    console.log(name);
 
+    var price = localStorage.getItem("dynamicpricee");
+    document.getElementById('it_price').innerHTML = price;
+    console.log(price)
+
+
+// Quantity counter
 var count = 1;
 var countEl = document.getElementById('counter');
     function plus(){
@@ -55,20 +75,27 @@ var countEl = document.getElementById('counter');
         countEl.value = count;
       }  
     }
-function pushToLs(){
-// Declarations for variables passing through local storage
-    var it_name = document.getElementById('it_name').innerHTML;
-    var it_price = document.getElementById('it_price').innerHTML;
-    var it_quantity = document.getElementById('counter').value;
-    var it_vendor = document.getElementById('it_vendor').innerHTML;
-    console.log(it_vendor,it_name,it_quantity, it_price)
-// Setting the items to send to localStorage as variables
-localStorage.setItem("t_vendor", it_vendor);  
-localStorage.setItem("t_name", it_name);
-localStorage.setItem("t_price", it_price);
-localStorage.setItem("t_quantity", it_quantity);
+// ------------
 
-}
+// function pushToLs(){
+//     var it_name = document.getElementById('it_name').innerHTML;
+//     var it_price = document.getElementById('it_price').innerHTML;
+//     var it_quantity = document.getElementById('counter').value;
+//     var it_vendor = document.getElementById('it_vendor').innerHTML;
+//     console.log(it_vendor,it_name,it_quantity, it_price)
+// localStorage.getItem("t_vendor", it_vendor);  
+// localStorage.getItem("t_name", it_name);
+// localStorage.getItem("t_price", it_price);
+// localStorage.getItem("t_quantity", it_quantity);
+
+// var button = event.target;
+// button.style.backgroundColor = "blue";
+// button.innerHTML = "Added To Cart";
+// document.getElementsById('route').style.display = 'block';
+
+
+
+// }
   // Retrieve
 //   document.getElementById("result").innerHTML = localStorage.getItem("t_price");
 

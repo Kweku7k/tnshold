@@ -13,7 +13,7 @@
   
 <title>Document</title>
 </head>
-<body>
+<body  onclick="myFunction()">
     
     <div class="something-else" style="position: relative;">
         <div class="back">
@@ -26,51 +26,80 @@
     
         <div class="container" >
             <div class="vending row">   
-                <h5 class="section-head" class="popin" style="width:auto;" ><u>Indomie Bar</u></h5>        
+                <h5 class="section-head" class="popin" style="width:auto;" ><u>Josephines</u></h5>        
                 <!-- <h4 class="view-all-option" style="color: black;"><u>View all &#8594;</u></h4> -->
             </div>
         
+            <a href="{{ url_for('jo_friedrice') }}">
         <div class="row" id="vrow">
             <div class="elipse">
             </div>
                 <div class="definition">
-                    <h6 class="topin" id="dynamic-title">Friedrice</h6>
+                    <h6 class="topin" id="dynamic-title">Fried Rice</h6>
                     <h6 class="weak" id="dynamic-description">Vegetables, Eggs</h6>
     
                 </div>
                 <div class="asdf" onclick="changeColor()"id="dynamic-price">
                     <!-- Ghc 20.00 -->
                     <!-- <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added"> -->
-                        &#8373;5.00
+                        &#8373;10.00
         
                 </div>
             </div>
+            </a>
     
+            <a href="{{ url_for('jo_jollof')}}">
             <div class="row" id="vrow">
                 <div class="elipse">
                 </div>
                     <div class="definition">
-                        <h6 class="topin">Large</h6>
+                        <h6 class="topin">Jollof Rice</h6>
                         <h6 class="weak">Vegetable, Eggs, Beef </h6>
                     </div>
                     <div class="asdf">
-                    <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;
-                        10.00</span>
+                        &#8373;10.00
                     </div>
                 </div>
+                </a>
 
+                <a href="{{ url_for('jo_waakye')}}">
                 <div class="row" id="vrow">
                     <div class="elipse">
                     </div>
                         <div class="definition">
-                            <h6 class="topin">Extra Large</h6>
+                            <h6 class="topin">Waakye</h6>
                             <h6 class="weak">Vegetable, Eggs, Beef, Sausages </h6>
                         </div>
                         <div class="asdf">
-                        <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;
-                            12.00</span>
+                            &#8373;10.00 
                         </div>
                     </div>
+                    </a>
+
+                    <div class="row" id="vrow">
+                        <div class="elipse">
+                        </div>
+                            <div class="definition">
+                                <h6 class="topin">Plain Rice</h6>
+                                <h6 class="weak">Vegetable, Eggs, Beef, Sausages </h6>
+                            </div>
+                            <div class="asdf">
+                                &#8373;10.00 
+                            </div>
+                        </div>
+
+                       
+                        <div class="row" id="vrow">
+                            <div class="elipse">
+                            </div>
+                                <div class="definition">
+                                    <h6 class="topin">Banku</h6>
+                                    <h6 class="weak">Vegetable, Eggs, Beef, Sausages </h6>
+                                </div>
+                                <div class="asdf">
+                                    &#8373;15.00 
+                                </div>
+                            </div>
             </div>
     
             <a href="{{ url_for('tempcart')}}"><button class="button">Go to Cart &#8594;</button></a>
@@ -102,9 +131,9 @@
     }
     
     
-    // function myFunction(event) { 
-    //   alert(event.target.nodeName);
-    // }
+    function myFunction(event) { 
+      alert(event.target.nodeName);
+    }
     </script>
     
 </body>

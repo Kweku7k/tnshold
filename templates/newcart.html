@@ -51,7 +51,7 @@
                         <div class="elipse">
                         </div>
                             <div class="definition">
-                                <h6 class="topin" id="itname">Rice Crispies x4</h6>
+                                <h6 class="topin" id="itname">Test  x4</h6>
                                 <h6 class="weak" id="itprice">Ghc 17.00 </h6>
                             </div>
                             <div class="asdf">
@@ -66,11 +66,13 @@
 </div>
 
 <script>
+    var cart = [];
+    
 
 $(document).ready(function(){
-$("#ol").append(tname);
-});
-  // Recieve data from the option add to cart button
+
+
+
     var tname = localStorage.getItem("t_name");
     document.getElementById("itname").innerHTML = tname;
     console.log(tname)
@@ -86,8 +88,33 @@ $("#ol").append(tname);
     var tvendor = localStorage.getItem("t_vendor");
     // document.getElementById("itvendor").innerHTML = tvendor;
     console.log(tvendor)
-    
 
+    pushitin()
+// I will put this in a for loop for the array
+    // $("#ol").append(
+    //     `<div class="row" id="vrow" style="margin-bottom: 30px;">
+    //         <div class="elipse"></div>
+    //         <div class="definition">
+    //             <h6 class="topin" id="itname"> ${tname} </h6>
+    //             <h6 class="weak" id="itprice">${tprice} </h6></div>
+    //             <div class="asdf"><i class="far fa-trash-alt"></i></div></div>`);
+
+function pushitin(){
+        cart.push(tname, tprice)
+        console.log(cart);    
+}
+
+});
+  // Recieve data from the option add to cart button
+       
+
+
+    function addUp(tvendor) {
+    var held = `<div class="row" id="vrow" style="margin-bottom: 30px;"><div class="elipse"></div><div class="definition"><h6 class="topin" id="itname">${tvendor}</h6><h6 class="weak" id="itprice">Ghc 17.00 </h6></div><div class="asdf"><i class="far fa-trash-alt"></i></div></div>`
+    }
+
+
+    
     function order(vendor,name, price ,quantity) {
         this.name = name;
         this.price = price;
@@ -95,8 +122,8 @@ $("#ol").append(tname);
         this.vendor = vendor;
 }
 
-var one = new order(tvendor, tname, tprice, tquantity);
-console.log(one.vendor)
+// var one = new order(tvendor, tname, tprice, tquantity);
+// console.log(one.vendor)
     // var it_array = {name:tname. price:}
 </script>
 {% endblock %}

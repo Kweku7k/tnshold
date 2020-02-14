@@ -101,14 +101,68 @@ def tempcart():
 def tempcopy():
     return render_template('wbtt copy.html')
 
+
+@app.route('/tempcopysms', methods=['POST','GET'])
+def tempcopysms():
+    if request.method == 'POST' :
+        # order_id = request.form['id']
+        # order_name = request.form['Name']
+        # order_room = request.form['Room']
+        # order_pnumber = request.form['phone']
+        order_anumber = request.form['aphone']
+        # order_food = request.form['food']
+        # order_hostel = request.form['hostel']
+        # order_block = request.form['block']
+        # order_total = request.form['total']
+        # order_vendor = request.form['vendor']
+
+        # identify = Order.id
+        final_order = Order(aNumber=order_anumber)
+       
+        db.session.add(final_order)
+        db.session.commit()
+        all_orders = Order.query.order_by(Order.date_created).all()
+        print (all_orders)
+
+        api_key = "aniXLCfDJ2S0F1joBHuM0FcmH" #Remember to put your own API Key here
+        phone = "0545977791" #SMS recepient"s phone number
+        # message ="You have an order from " + order_name + " in " + order_hostel + " block " + order_block + " room " + order_room + " for " + order_food + " You can call on " + order_pnumber
+        message = "Alert " + order_anumber + "to order @ 6:00pm."
+        sender_id = "TNSGhana" #11 Characters maximum
+        send_sms(api_key,phone,message,sender_id)
+        return render_template('back.html')
+    else:
+        return render_template('wbtt copy.html')
+
+
 @app.route('/tempdescription', methods=['POST','GET'])
 def tempdescription():
     return render_template('new-description.html')
 
+@app.route('/subscribe', methods=['POST','GET'])
+def subscribe():
+    return render_template('back.html')
 
 @app.route('/tempdynamic', methods=['POST','GET'])
 def tempdynamic():
     return render_template('dynamicpage.html')
+
+
+@app.route('/prontowoman', methods=['POST','GET'])
+def prontowoman():
+    return render_template('Josephine1.html')
+
+@app.route('/jo_friedrice', methods=['POST','GET'])
+def jo_friedrice():
+    return render_template('Joxfriedrice.html')
+
+@app.route('/jo_jollof', methods=['POST','GET'])
+def jo_jollof():
+    return render_template('Joxjollof.html')
+
+@app.route('/jo_waakye', methods=['POST','GET'])
+def jo_waakye():
+    return render_template('Joxwaakye.html')
 
 
 @app.route('/test', methods=['POST','GET'])
