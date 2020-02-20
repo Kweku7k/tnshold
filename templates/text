@@ -47,14 +47,3 @@ send_sms(api_key,phone,message,sender_id)
 
 
 </div>
-
-
-    if request.method == 'POST' :
-        order_number = request.form['phone']
-        final_order = Order(name=order_name)
-        all_orders = Order.query.order_by(Order.date_created).all()
-
-        db.session.add(final_order)
-        db.session.commit()
-    else:
-    return render_template('wbtt copy.html')

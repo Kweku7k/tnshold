@@ -2,15 +2,10 @@
 
 {% block head %}
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ url_for('static',filename='css/white.css')}}">
-
 {% endblock %}
 
 {% block body %}
-<div class="description-image" style="position: relative;">
-    <div class="back">
-        <a href="{{ url_for('tempcopy') }}"><i class="fas fa-angle-left"></i><span>Back</span></a>
-        </div>
+<div class="description-image">
     <img src="{{ url_for('static',filename='img/Basillisa 2 (1).png')}}" style="width: 100%;">
 
 </div>
@@ -19,95 +14,27 @@
 <div class="description-card">
     <div class="row" id="desc-card">
         <div class="description-titles">
-            <h6 class="description-disabled" id="it_vendor">IMMACULATE</h6>
-            <h3 class="description-header" id="it_name">French Fries</h3>
+            <h6 class="description-disabled">IMMACULATE</h6>
+            <h3 class="description-header">Toasted <br> French Fries</h3>
         </div>
 
         <div class="description-prices">
             <h6 class="description-disabled">PRICE</h6>
-            <h3 class="description-header" id="it_price">Ghc20.00</h3>
+            <h3 class="description-header">Ghc20.00</h3>
         </div>
     </div>
 
 
             <h6 class="description-disabled" id="description-label">DESCRIPTION</h6>
-            <h3 class="description-body" id="result">So you dier I have given you all of this space to express yourself, if you like fool you willl see what I will do to you erh</h3>
+            <h3 class="description-body">So you dier I have given you all of this space to express yourself, if you like fool you willl see what I will do to you erh</h3>
     <div class="description-action-buttons">
-        <i class="fas fa-plus-circle fa-2x" id="desc-button" onclick="plus()"></i>
-        <input type="number" id="counter" value="1"></span>
-        <i class="fas fa-minus-circle fa-2x" id="desc-button" onclick="minus()"></i>
+        <i class="fas fa-plus-circle fa-2x" id="desc-button"></i>
+        <span id="desc-button">0</span>
+        <i class="fas fa-minus-circle fa-2x" id="desc-button"></i>
 
-        <button class="add-to-cart" id="add-to-carts"  style="background-color: grey; margin-left: auto; color: white;" onclick="pushToLs()">Add To Cart</button>
+        <button class="add-to-cart" style="background-color: blue; margin-left: auto; color: white;">Add TO Cart</button>
     </div>
-
 </div>
 
-<!-- input(type="text" value="2") -->
-<a href="{{ url_for('tempcart') }}">
-    <div class="route" id="route">
-        Go to cart &#8614;
-    </div>
-</a>
-
-
-<script>
-    
-    var name = localStorage.getItem("dynamicnamee");
-    document.getElementById('it_name').innerHTML = name;
-    console.log(name);
-
-    var price = localStorage.getItem("dynamicpricee");
-    document.getElementById('it_price').innerHTML = price;
-    console.log(price)
-
-
-// Quantity counter
-var count = 1;
-var countEl = document.getElementById('counter');
-    function plus(){
-        count++;
-        countEl.value = count;
-        console.log(countEl)
-    }
-    function minus(){
-      if (count > 1) {
-        count--;
-        countEl.value = count;
-      }  
-    }
-// ------------
-
-// function pushToLs(){
-//     var it_name = document.getElementById('it_name').innerHTML;
-//     var it_price = document.getElementById('it_price').innerHTML;
-//     var it_quantity = document.getElementById('counter').value;
-//     var it_vendor = document.getElementById('it_vendor').innerHTML;
-//     console.log(it_vendor,it_name,it_quantity, it_price)
-// localStorage.getItem("t_vendor", it_vendor);  
-// localStorage.getItem("t_name", it_name);
-// localStorage.getItem("t_price", it_price);
-// localStorage.getItem("t_quantity", it_quantity);
-
-// var button = event.target;
-// button.style.backgroundColor = "blue";
-// button.innerHTML = "Added To Cart";
-// document.getElementsById('route').style.display = 'block';
-
-
-
-// }
-  // Retrieve
-//   document.getElementById("result").innerHTML = localStorage.getItem("t_price");
-
-
-
-
-
-
-
-
-
-
-</script>
 
 {% endblock %}

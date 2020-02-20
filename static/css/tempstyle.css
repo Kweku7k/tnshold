@@ -80,6 +80,10 @@ body{
 
 }
 
+a{
+    color: #c4c4c4;
+}
+
 .definition{
     padding-left: 20px;
     font-family: 'Poppins', sans-serif;
@@ -135,6 +139,9 @@ margin-bottom: 10px;
 .head-image{
     width: 100%;
     padding-bottom: 30px;
+    /* background-attachment: fixed; */
+    /* background-position: center; */
+    background-attachment: fixed;
 }
   
   /* Bottom right text */
@@ -190,3 +197,45 @@ margin-bottom: 10px;
 
       }
 
+      .button {
+        position: fixed;
+        bottom: 0;
+        background-color: blue;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        left: 0;
+        /* height: 80px; */
+        border-radius: 16px;
+        width: 100%;
+      }
+
+      #online{
+          color: blue;
+      }
+
+      #offline{
+      }
+
+      .parallax {
+        /* The image used */
+        /* background-image: url("img_parallax.jpg"); */
+        background-image: url('/static/img/home.jpg')
+
+    /* <!-- <img src="{{ url_for('static',filename='img/coffee.gif')}}" class="head-image"> --> */
+
+      
+        /* Set a specific height */
+        min-height: 500px; 
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }

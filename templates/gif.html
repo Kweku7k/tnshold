@@ -4,27 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="refresh" content="2;url={{ url_for('tempstartcopy')}}" />
     <link rel="stylesheet" href="{{ url_for('static',filename='css/gifstyle.css')}}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
-
-<body onload="fadeIn()">
+<body>
     <div class="holdem">
         <a class="please" href="{{ url_for('tempstartcopy')}}" style="text-decoration: none;"><h6 class="gif" id="hungry"><span class="copy">tns</span>ghana.</h6></a>
     </div>
 
 
 <script>
-
-$(document).ready(function () { $('body').hide().fadeIn(2500).delay(12000)});
-
-
-
     var i = 0;
     var txt = 'Food delivery in less than 10 minutes.';
     var speed = 170;
@@ -36,11 +29,6 @@ $(document).ready(function () { $('body').hide().fadeIn(2500).delay(12000)});
         i++;
         setTimeout(typeWriter, speed);
       }
-    }
-
-    function fadeIn(){
-      // document.getElementsById('gif').fadeIn();
-      $("#hungry").fadeIn();
     }
 
     // function vanish{
