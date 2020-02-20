@@ -1,14 +1,19 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/tempstyle.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/white.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/091f1122a7.js" crossorigin="anonymous"></script>
 
-{% block head %}
-<link rel="stylesheet" href="{{ url_for('static',filename='css/tempstyle.css')}}">
-<link rel="stylesheet" href="{{ url_for('static',filename='css/white.css')}}">
-<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-
-{% endblock %}
-
-{% block body %}
+    <title>Document</title>
+</head>
+<body onclick="dynamic(event)">
+    
 <div class="something-else" style="position: relative;">
     <div class="back">
 <a href="{{ url_for('tempcopy') }}"><i class="fas fa-angle-left"></i><span>Back</span></a>
@@ -20,15 +25,131 @@
 
     <div class="container" >
         <div class="vending row">   
-            <h5 class="section-head" class="popin" style="width:auto;" ><u>Indomie Bar</u></h5>        
+            <h5 class="section-head" class="popin" style="width:auto;" ><u>Buenos Dias</u></h5>        
             <!-- <h4 class="view-all-option" style="color: black;"><u>View all &#8594;</u></h4> -->
         </div>
-    
+
+        <div class="vending row">   
+            <h5 class="section-head" class="popin" style="width:auto; color: blue;" >Drinks</h5>        
+        </div>
+
     <div class="row" id="vrow">
         <div class="elipse">
         </div>
             <div class="definition">
-                <h6 class="topin" >Indomie Bar</h6>
+                <h6 class="topin" >Cadbury</h6>
+                <h6 class="weak">Yeah Nigga some more texttttt</h6>
+            </div>
+            <div class="asdf" onclick="changeColor()">
+                <!-- Ghc 20.00 -->
+                <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;5.00</span>
+    
+            </div>
+        </div>
+    <!-- ---------------------------------------------------------------------- -->
+    <div class="row" id="vrow">
+        <div class="elipse">
+        </div>
+            <div class="definition">
+                <h6 class="topin" >Milo</h6>
+                <h6 class="weak">Yeah Nigga some more texttttt</h6>
+            </div>
+            <div class="asdf" onclick="changeColor()">
+                <!-- Ghc 20.00 -->
+                <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;5.00</span>
+    
+            </div>
+        </div>
+    <!-- ---------------------------------------------------------------------- -->
+    <div class="row" id="vrow">
+        <div class="elipse">
+        </div>
+            <div class="definition">
+                <h6 class="topin" >Nescafe</h6>
+                <h6 class="weak">Yeah Nigga some more texttttt</h6>
+            </div>
+            <div class="asdf" onclick="changeColor()">
+                <!-- Ghc 20.00 -->
+                <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;5.00</span>
+    
+            </div>
+        </div>
+    <!-- ---------------------------------------------------------------------- -->
+
+<!-- <u><h5 class="dynamictitle">Porridges</h4></u> -->
+    <div class="vending row">   
+        <h5 class="section-head" class="popin" style="width:auto; color: blue;" >Porridges</h5>        
+    </div>
+
+
+    <!-- ---------------------------------------------------------------------- -->
+    <div class="row" id="vrow">
+        <div class="elipse">
+        </div>
+            <div class="definition">
+                <h6 class="topin" >Oats</h6>
+                <h6 class="weak">Yeah Nigga some more texttttt</h6>
+            </div>
+            <div class="asdf" onclick="changeColor()">
+                <!-- Ghc 20.00 -->
+                <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;5.00</span>
+    
+            </div>
+        </div>
+    <!-- ---------------------------------------------------------------------- -->
+
+
+    <div class="row" id="vrow">
+        <div class="elipse">
+        </div>
+            <div class="definition">
+                <h6 class="topin" >Wheat</h6>
+                <h6 class="weak"></h6>
+            </div>
+            <div class="asdf" onclick="changeColor()">
+                <!-- Ghc 20.00 -->
+                <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;5.00</span>
+    
+            </div>
+        </div>
+    <!-- ---------------------------------------------------------------------- -->
+
+
+    <div class="row" id="vrow">
+        <div class="elipse">
+        </div>
+            <div class="definition">
+                <h6 class="topin" >Tom Brown</h6>
+                <!-- <h6 class="weak">Yeah Nigga some more texttttt</h6> -->
+            </div>
+            <div class="asdf" onclick="changeColor()">
+                <!-- Ghc 20.00 -->
+                <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;5.00</span>
+    
+            </div>
+        </div>
+    <!-- ---------------------------------------------------------------------- -->
+
+    <div class="row" id="vrow">
+        <div class="elipse">
+        </div>
+            <div class="definition">
+                <h6 class="topin" >Rice Water</h6>
+                <h6 class="weak">Yeah Nigga some more texttttt</h6>
+            </div>
+            <div class="asdf" onclick="changeColor()">
+                <!-- Ghc 20.00 -->
+                <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;5.00</span>
+    
+            </div>
+        </div>
+    <!-- ---------------------------------------------------------------------- -->
+
+    <div class="row" id="vrow">
+        <div class="elipse">
+        </div>
+            <div class="definition">
+                <h6 class="topin" >Ekoagbemi</h6>
                 <h6 class="weak">Yeah Nigga some more texttttt</h6>
             </div>
             <div class="asdf" onclick="changeColor()">
@@ -37,24 +158,38 @@
     
             </div>
         </div>
-
-        <div class="row" id="vrow">
-            <div class="elipse">
-            </div>
-                <div class="definition">
-                    <h6 class="topin">Indomie Bar</h6>
-                    <h6 class="weak">Yeah Nigga some more texttttt</h6>
-                </div>
-                <div class="asdf">
-                <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">add</span>
-                </div>
-            </div>
+    <!-- ---------------------------------------------------------------------- -->
         </div>
 
         <a href="{{ url_for('tempcart')}}"><button class="button">Go to Cart &#8594;</button></a>
 
 </section>
 
+<section class="popup" style="display: none;">
+
+    <div class="cart">
+        <div class="container" >
+        <!-- <h4>Cart</h4> -->
+        <div class="vending row">   
+            <h5 class="section-head" class="popin" style="width:auto;" ><u>Buenos Dias</u></h5>        
+            <!-- <h4 class="view-all-option" style="color: black;"><u>View all &#8594;</u></h4> -->
+        </div>
+        <div class="row" id="vrow">
+            <div class="elipse">
+            </div>
+                <div class="definition">
+                    <h6 class="topin" >Ekoagbemi</h6>
+                    <h6 class="weak">Yeah Nigga some more texttttt</h6>
+                </div>
+                <div class="asdf" onclick="changeColor()">
+                    <!-- Ghc 20.00 -->
+                    <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">add</span>
+        
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <script>
 function changeColor(){
@@ -64,6 +199,22 @@ function changeColor(){
     document.getElementById('added-icon').style.color='blue';
     document.getElementById('added').style.color='blue';
 }
+
+function dynamic (event){
+    button = event.target;
+    var row = button.parentElement.parentElement;
+    var name = row.getElementsByClassName("topin")[0].innerHTML;
+    var price = row.getElementsByClassName("asdf")[0].innerText ;
+    localStorage.setItem("dname",name)
+    localStorage.setItem("dprice",price)
+    // var description_name = localStorage.getItem("dname")
+    // var description_price = localStorage.getItem("dprice")
+    console.log(name, price )
+
+   
+
+
+}
 </script>
 
-{% endblock %}
+</body>

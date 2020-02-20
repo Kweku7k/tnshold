@@ -20,7 +20,7 @@
 
         <div class="description-prices">
             <h6 class="description-disabled">PRICE</h6>
-            <h3 class="description-header">Ghc20.00</h3>
+            <h3 class="description-header" id="priced">Ghc20.00</h3>
         </div>
     </div>
 
@@ -36,5 +36,17 @@
     </div>
 </div>
 
+
+<script>
+    var description_name = localStorage.getItem("dname")
+    var description_price = localStorage.getItem("dprice")
+    // var newname = document.getElementById("priced").innerHTML
+    document.getElementsByClassName("description-header")[0].innerHTML = description_name;
+    document.getElementById("priced").innerHTML= description_price
+
+
+    console.log(newname)
+    
+</script>
 
 {% endblock %}
