@@ -54,3 +54,14 @@
         border-radius: 15px;
         padding-top: 20px;
     }
+
+    .whitespace{
+        height: 50px;
+        width: 30px;
+        background-color: rgba(0, 128, 128, 0);
+
+    }
+
+    #online{
+        color: blue;
+    }

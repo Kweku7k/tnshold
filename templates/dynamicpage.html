@@ -9,10 +9,12 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/091f1122a7.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <title>Document</title>
 </head>
 <body onclick="dynamic(event)">
+
     
 <div class="something-else" style="position: relative;">
     <div class="back">
@@ -33,7 +35,8 @@
             <h5 class="section-head" class="popin" style="width:auto; color: blue;" >Drinks</h5>        
         </div>
 
-    <div class="row" id="vrow">
+   <!-- <a href="{{ url_for("tempdescription")}}"> -->
+        <div class="row" id="vrow">
         <div class="elipse">
         </div>
             <div class="definition">
@@ -43,10 +46,11 @@
             <div class="asdf" onclick="changeColor()">
                 <!-- Ghc 20.00 -->
                 <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;5.00</span>
-    
             </div>
         </div>
+        <!-- </a> -->
     <!-- ---------------------------------------------------------------------- -->
+   <!-- <a href="{{ url_for("tempdescription")}}"> -->
     <div class="row" id="vrow">
         <div class="elipse">
         </div>
@@ -60,8 +64,10 @@
     
             </div>
         </div>
-    <!-- ---------------------------------------------------------------------- -->
-    <div class="row" id="vrow">
+        <!-- </a> -->
+     <!-- ---------------------------------------------------------------------- -->
+    <a href="{{ url_for("tempdescription")}}">
+        <div class="row" id="vrow">
         <div class="elipse">
         </div>
             <div class="definition">
@@ -74,6 +80,7 @@
     
             </div>
         </div>
+    </a>
     <!-- ---------------------------------------------------------------------- -->
 
 <!-- <u><h5 class="dynamictitle">Porridges</h4></u> -->
@@ -83,7 +90,8 @@
 
 
     <!-- ---------------------------------------------------------------------- -->
-    <div class="row" id="vrow">
+    <a href="{{ url_for("tempdescription")}}">
+        <div class="row" id="vrow">
         <div class="elipse">
         </div>
             <div class="definition">
@@ -96,10 +104,12 @@
     
             </div>
         </div>
+        </a>
     <!-- ---------------------------------------------------------------------- -->
 
 
-    <div class="row" id="vrow">
+    <a href="{{ url_for("tempdescription")}}">
+        <div class="row" id="vrow">
         <div class="elipse">
         </div>
             <div class="definition">
@@ -112,9 +122,9 @@
     
             </div>
         </div>
+        </a>
     <!-- ---------------------------------------------------------------------- -->
-
-
+   <a href="{{ url_for("tempdescription")}}">
     <div class="row" id="vrow">
         <div class="elipse">
         </div>
@@ -128,9 +138,10 @@
     
             </div>
         </div>
+        </a>
     <!-- ---------------------------------------------------------------------- -->
-
-    <div class="row" id="vrow">
+    <a href="{{ url_for("tempdescription")}}">
+        <div class="row" id="vrow">
         <div class="elipse">
         </div>
             <div class="definition">
@@ -143,8 +154,10 @@
     
             </div>
         </div>
+        </a>
     <!-- ---------------------------------------------------------------------- -->
 
+   <a href="{{ url_for("tempdescription")}}">
     <div class="row" id="vrow">
         <div class="elipse">
         </div>
@@ -158,20 +171,30 @@
     
             </div>
         </div>
+        </a>
+        <div class="whitespace"></div>
+
     <!-- ---------------------------------------------------------------------- -->
         </div>
 
-        <a href="{{ url_for('tempcart')}}"><button class="button">Go to Cart &#8594;</button></a>
+       <button class="button" onclick="showCart()">Go to Cart &#8594;</button>
 
 </section>
 
-<section class="popup" style="display: none;">
+
+
+<!-- -----------------------------------Cart----------------------------------- -->
+
+
+
+
+<section class="popup" id="cart" style="display: none;">
 
     <div class="cart">
-        <div class="container" >
+        <div class="container" id="holder">
         <!-- <h4>Cart</h4> -->
         <div class="vending row">   
-            <h5 class="section-head" class="popin" style="width:auto;" ><u>Buenos Dias</u></h5>        
+            <h5 class="section-head" class="popin" style="width:auto;" ><u>Your Cart</u></h5>        
             <!-- <h4 class="view-all-option" style="color: black;"><u>View all &#8594;</u></h4> -->
         </div>
         <div class="row" id="vrow">
@@ -179,20 +202,21 @@
             </div>
                 <div class="definition">
                     <h6 class="topin" >Ekoagbemi</h6>
-                    <h6 class="weak">Yeah Nigga some more texttttt</h6>
+                    <h6 class="weak">&#8373;5.00 x 1</h6>
                 </div>
                 <div class="asdf" onclick="changeColor()">
-                    <!-- Ghc 20.00 -->
-                    <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">add</span>
+                    <i id="added-icon"class="fas fa-minus"></i><span class="work" id="added">delete</span>
         
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 
 <script>
-function changeColor(){
+    orders = [];
+function changeColor(event){
     document.getElementById('added').value = "added";
     document.getElementsByClassName('work').value = "added";
 
@@ -200,20 +224,43 @@ function changeColor(){
     document.getElementById('added').style.color='blue';
 }
 
-function dynamic (event){
+function dynamic(event){
     button = event.target;
-    var row = button.parentElement.parentElement;
+    var row = button.parentElement;
     var name = row.getElementsByClassName("topin")[0].innerHTML;
-    var price = row.getElementsByClassName("asdf")[0].innerText ;
-    localStorage.setItem("dname",name)
-    localStorage.setItem("dprice",price)
-    // var description_name = localStorage.getItem("dname")
-    // var description_price = localStorage.getItem("dprice")
-    console.log(name, price )
+    var price = row.parentElement.getElementsByClassName("asdf")[0].innerText;
+    console.log(price)
+    orders.push(name,price)
+    console.log(orders) 
+       var cart = document.getElementsByClassName("cart")[0]
+       var myVariable = document.getElementById("holder")
+        var cartRow = document.createElement('div')
+        var wosh = `<div class="row" id="vrow">
+        <div class="elipse">
+        </div>
+            <div class="definition">
+                <h6 class="topin" >${topin}</h6>
+                <h6 class="weak">Yeah Nigga some more texttttt</h6>
+            </div>
+            <div class="asdf" onclick="changeColor()">
+                <!-- Ghc 20.00 -->
+                <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">add</span>
+    
+            </div>
+        </div>`;
+        cartRow.innerHTML = wosh;
+        // myVariable.append(cartRow)
+        console.log(myVariable)
+       
+        console.log(cartRow)
+   }
 
-   
+   function showCart(){
+    document.getElementById("cart").style.display = "block";
+}
 
-
+function hideCart(){
+    document.getElementById("cart").style.display = "none";
 }
 </script>
 
