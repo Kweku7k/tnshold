@@ -13,8 +13,7 @@
 
     <title>Document</title>
 </head>
-<body onclick="dynamic(event)">
-
+<body>
     
 <div class="something-else" style="position: relative;">
     <div class="back">
@@ -25,7 +24,7 @@
 
 <section>
 
-    <div class="container" >
+    <div class="container">
         <div class="vending row">   
             <h5 class="section-head" class="popin" style="width:auto;" ><u>Buenos Dias</u></h5>        
             <!-- <h4 class="view-all-option" style="color: black;"><u>View all &#8594;</u></h4> -->
@@ -35,30 +34,33 @@
             <h5 class="section-head" class="popin" style="width:auto; color: blue;" >Drinks</h5>        
         </div>
 
+  
    <!-- <a href="{{ url_for("tempdescription")}}"> -->
-        <div class="row" id="vrow">
+    <div class="row" id="vrow">
         <div class="elipse">
         </div>
-            <div class="definition">
+            <div class="definition" onclick="describe(event)">
                 <h6 class="topin" >Cadbury</h6>
                 <h6 class="weak">Yeah Nigga some more texttttt</h6>
+                <h6 class="descr"  style="display: none;">So yeah description.</h6>
             </div>
-            <div class="asdf" onclick="changeColor()">
+            <div class="asdf" onclick="changeColor(event)">
                 <!-- Ghc 20.00 -->
                 <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;5.00</span>
             </div>
         </div>
         <!-- </a> -->
-    <!-- ---------------------------------------------------------------------- -->
-   <!-- <a href="{{ url_for("tempdescription")}}"> -->
+     <!-- ---------------------------------------------------------------------- -->
+
+      <!-- <a href="{{ url_for("tempdescription")}}"> -->
     <div class="row" id="vrow">
         <div class="elipse">
         </div>
-            <div class="definition">
+            <div class="definition" >
                 <h6 class="topin" >Milo</h6>
                 <h6 class="weak">Yeah Nigga some more texttttt</h6>
             </div>
-            <div class="asdf" onclick="changeColor()">
+            <div class="asdf" onclick="changeColor(event)">
                 <!-- Ghc 20.00 -->
                 <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;5.00</span>
     
@@ -66,122 +68,75 @@
         </div>
         <!-- </a> -->
      <!-- ---------------------------------------------------------------------- -->
-    <a href="{{ url_for("tempdescription")}}">
-        <div class="row" id="vrow">
+
+       <!-- <a href="{{ url_for("tempdescription")}}"> -->
+    <div class="row" id="vrow">
         <div class="elipse">
         </div>
-            <div class="definition">
-                <h6 class="topin" >Nescafe</h6>
+            <div class="definition" >
+                <h6 class="topin" >Neslte</h6>
                 <h6 class="weak">Yeah Nigga some more texttttt</h6>
             </div>
-            <div class="asdf" onclick="changeColor()">
+            <div class="asdf" onclick="changeColor(event)">
                 <!-- Ghc 20.00 -->
                 <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;5.00</span>
-    
             </div>
         </div>
-    </a>
-    <!-- ---------------------------------------------------------------------- -->
+        <!-- </a> -->
+     <!-- ---------------------------------------------------------------------- -->
+  
 
-<!-- <u><h5 class="dynamictitle">Porridges</h4></u> -->
-    <div class="vending row">   
+    <!-- <div class="vending row">   
         <h5 class="section-head" class="popin" style="width:auto; color: blue;" >Porridges</h5>        
-    </div>
-
-
-    <!-- ---------------------------------------------------------------------- -->
-    <a href="{{ url_for("tempdescription")}}">
-        <div class="row" id="vrow">
-        <div class="elipse">
-        </div>
-            <div class="definition">
-                <h6 class="topin" >Oats</h6>
-                <h6 class="weak">Yeah Nigga some more texttttt</h6>
-            </div>
-            <div class="asdf" onclick="changeColor()">
-                <!-- Ghc 20.00 -->
-                <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;5.00</span>
+    </div> -->
     
-            </div>
-        </div>
-        </a>
-    <!-- ---------------------------------------------------------------------- -->
 
-
-    <a href="{{ url_for("tempdescription")}}">
-        <div class="row" id="vrow">
-        <div class="elipse">
-        </div>
-            <div class="definition">
-                <h6 class="topin" >Wheat</h6>
-                <h6 class="weak"></h6>
-            </div>
-            <div class="asdf" onclick="changeColor()">
-                <!-- Ghc 20.00 -->
-                <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;5.00</span>
-    
-            </div>
-        </div>
-        </a>
-    <!-- ---------------------------------------------------------------------- -->
-   <a href="{{ url_for("tempdescription")}}">
-    <div class="row" id="vrow">
-        <div class="elipse">
-        </div>
-            <div class="definition">
-                <h6 class="topin" >Tom Brown</h6>
-                <!-- <h6 class="weak">Yeah Nigga some more texttttt</h6> -->
-            </div>
-            <div class="asdf" onclick="changeColor()">
-                <!-- Ghc 20.00 -->
-                <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;5.00</span>
-    
-            </div>
-        </div>
-        </a>
-    <!-- ---------------------------------------------------------------------- -->
-    <a href="{{ url_for("tempdescription")}}">
-        <div class="row" id="vrow">
-        <div class="elipse">
-        </div>
-            <div class="definition">
-                <h6 class="topin" >Rice Water</h6>
-                <h6 class="weak">Yeah Nigga some more texttttt</h6>
-            </div>
-            <div class="asdf" onclick="changeColor()">
-                <!-- Ghc 20.00 -->
-                <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">&#8373;5.00</span>
-    
-            </div>
-        </div>
-        </a>
-    <!-- ---------------------------------------------------------------------- -->
-
-   <a href="{{ url_for("tempdescription")}}">
-    <div class="row" id="vrow">
-        <div class="elipse">
-        </div>
-            <div class="definition">
-                <h6 class="topin" >Ekoagbemi</h6>
-                <h6 class="weak">Yeah Nigga some more texttttt</h6>
-            </div>
-            <div class="asdf" onclick="changeColor()">
-                <!-- Ghc 20.00 -->
-                <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">add</span>
-    
-            </div>
-        </div>
-        </a>
+         <!-- <input type="text" value="0" id="qty" style="width: auto;"> -->
         <div class="whitespace"></div>
 
     <!-- ---------------------------------------------------------------------- -->
         </div>
-
-       <button class="button" onclick="showCart()">Go to Cart &#8594;</button>
+       <button class="button" onclick="showCart()"> <input type="text" value="0" id="qty" style="width: 20px;"> Go to Cart &#8594;</button>
 
 </section>
 
 
+
+<!-- -----------------------------------Description----------------------------------- -->
+<section class="desc_popup" style="display: none;">
+    <div class="desc_cart">
+        <div class="something-else" style="position: relative;">
+            <div class="back">
+        <i class="fas fa-angle-left" onclick="hideDesc()"></i><span>Back</span>
+        </div>
+        <img src="{{ url_for('static',filename='img/noodles.gif')}}" style="border-radius: 15px;"class="head-image">
+        </div>
+        <!-- <img src="{{ url_for('static',filename='img/noodles.gif')}}" class="head-image"> -->
+
+        <div class="container">
+            <div class="row" id="desc-card">
+                <div class="description-titles">
+                    <h6 class="description-disabled">IMMACULATE</h6>
+                    <h3 class="description-header">Toasted <br> French Fries</h3>
+                </div>
+        
+                <div class="description-prices">
+                    <h6 class="description-disabled">PRICE</h6>
+                    <h3 class="description-header" id="priced">Ghc20.00</h3>
+                </div>
+            </div>
+
+            <h6 class="description-disabled" id="description-label">DESCRIPTION</h6>
+            <h3 class="description-body">So you dier I have given you all of this space to express yourself, if you like fool you willl see what I will do to you erh</h3>
+    <div class="description-action-buttons">
+        <i class="fas fa-plus-circle fa-2x" id="desc-button"></i>
+        <span id="desc-button">0</span>
+        <i class="fas fa-minus-circle fa-2x" id="desc-button"></i>
+
+        <button class="add-to-cart" onclick="" style="background-color: blue; margin-left: auto; color: white;">Add TO Cart</button>
+    </div>
+    </div>
+</section>
 
 <!-- -----------------------------------Cart----------------------------------- -->
 
@@ -197,7 +152,7 @@
             <h5 class="section-head" class="popin" style="width:auto;" ><u>Your Cart</u></h5>        
             <!-- <h4 class="view-all-option" style="color: black;"><u>View all &#8594;</u></h4> -->
         </div>
-        <div class="row" id="vrow">
+        <!-- <div class="row" id="vrow">
             <div class="elipse">
             </div>
                 <div class="definition">
@@ -206,23 +161,78 @@
                 </div>
                 <div class="asdf" onclick="changeColor()">
                     <i id="added-icon"class="fas fa-minus"></i><span class="work" id="added">delete</span>
-        
                 </div>
+            </div> -->
+            <div class="row">
+                <button class="previousButton" onclick="hideCart()"><i class="fas fa-backward"></i> Back</button>
+                <a href="{{url_for("tempform")}}"><button class="nextButton">Next</button></a>
             </div>
-
         </div>
     </div>
 </section>
 
 <script>
-    orders = [];
-function changeColor(event){
-    document.getElementById('added').value = "added";
-    document.getElementsByClassName('work').value = "added";
+    var orders = [];
 
-    document.getElementById('added-icon').style.color='blue';
-    document.getElementById('added').style.color='blue';
+function changeColor(event){
+    init_val =parseInt(document.getElementById('qty').value)
+    new_val = init_val + 1;
+    var button = event.target.parentElement
+    if (button.style.color !== "blue")
+{
+    document.getElementById('qty').value = new_val;
+    console.log(init_val)
+    button.style.color = "blue";
+    console.log(button)
+    var row = button.parentElement
+    console.log(row)
+    var content = row.getElementsByClassName('topin')[0].innerText;
+    var price = button.getElementsByClassName('work')[0].innerText;
+    console.log(content)
+    console.log(price)
+    orders.push(content, price)
+    console.log(orders)
+    var cart = document.getElementsByClassName("cart")[0]
+       var myVariable = document.getElementById("holder")
+        var cartRow = document.createElement('div')
+        var wosh = `<div class="row" id="vrow">
+        <div class="elipse">
+        </div>
+            <div class="definition">
+                <h6 class="topin" >${content}</h6>
+                <h6 class="weak">${price}x1;</h6>
+            </div>
+            <div class="asdf" onclick="changeColor()">
+                <!-- Ghc 20.00 -->
+                <i id="added-icon"class="fas fa-plus"></i><span class="work" id="added">add</span>
+            </div>
+        </div>`;
+        cartRow.innerHTML = wosh;
+        myVariable.append(cartRow)
+        console.log(myVariable)
+        console.log(cartRow)
 }
+    }
+    // addToCart()
+
+function describe(event){
+    // document.getElementById("desc_popup").style.display = "block";
+    button = event.target;
+    var row = button.parentElement;
+    console.log(row)
+    var name = row.getElementsByClassName('topin')[0].innerHTML;
+    console.log(name)
+    var priceholder = row.parentElement;
+    var price = priceholder.getElementsByClassName("asdf")[0].innerText;
+    console.log(price);
+    var outside = button.parentElement.parentElement.parentElement.parentElement.parentElement;
+    var lsname = outside.getElementsByClassName("desc_popup")[0].style.display="block";
+    document.getElementsByClassName("description-header")[0].innerHTML = name;
+    var lsprice = outside.getElementsByClassName("asdf")[0].innerText;
+    console.log(lsprice)
+}
+
+
 
 function dynamic(event){
     button = event.target;
@@ -239,7 +249,7 @@ function dynamic(event){
         <div class="elipse">
         </div>
             <div class="definition">
-                <h6 class="topin" >${topin}</h6>
+                <h6 class="topin" >${name}</h6>
                 <h6 class="weak">Yeah Nigga some more texttttt</h6>
             </div>
             <div class="asdf" onclick="changeColor()">
@@ -249,7 +259,7 @@ function dynamic(event){
             </div>
         </div>`;
         cartRow.innerHTML = wosh;
-        // myVariable.append(cartRow)
+        myVariable.append(cartRow)
         console.log(myVariable)
        
         console.log(cartRow)
@@ -257,6 +267,11 @@ function dynamic(event){
 
    function showCart(){
     document.getElementById("cart").style.display = "block";
+}
+
+function hideDesc(){
+    // document.getElementsByClassName("desc_popup").style.display = "none";
+ document.getElementsByClassName("desc_popup")[0].style.display="none";
 }
 
 function hideCart(){

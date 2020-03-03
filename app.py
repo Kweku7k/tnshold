@@ -69,8 +69,8 @@ def send_sms(api_key,phone,message,sender_id):
 def next():
     api_key = "aniXLCfDJ2S0F1joBHuM0FcmH" #Remember to put your own API Key here
     phone = "0545977791" #SMS recepient"s phone number
-    message = "Its workingggg"
-    sender_id = "KNUST-Admin" #11 Characters maximum
+    message = "You account has been suspended until further notice, MTN, power to you"
+    sender_id = "MobileMoney" #11 Characters maximum
     send_sms(api_key,phone,message,sender_id)
     return render_template('vendors.html')
 

@@ -55,6 +55,18 @@
         padding-top: 20px;
     }
 
+    .desc_cart{
+        background-color: white;
+        width: 90%;
+        /* width: 10%; */
+        height: 90%;
+        margin: auto;
+        vertical-align: middle;
+        margin-top: 5%;
+        border-radius: 15px;
+        /* padding-top: 20px; */
+    }
+
     .whitespace{
         height: 50px;
         width: 30px;
@@ -65,3 +77,66 @@
     #online{
         color: blue;
     }
+
+    .desc_name{
+        font-family: 'Poppins', sans-serif;
+        width: 45%;
+        font-weight: bold;
+    }
+
+    .add-to-cart{
+        background-color: #ffec13;
+        border: none;
+        color: black;
+        padding: 10px 60px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 16px;
+        font-weight: bold;
+        margin-right: 0;
+
+      
+}
+
+.previousButton {
+    position: absolute;
+    bottom: 10%;
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    margin: 4px 2px;
+    cursor: pointer;
+    /* left: 0; */
+    /* height: 80px; */
+    border-radius: 16px;
+    width: 30%;
+    font-weight: bold;
+  }
+
+
+
+.nextButton {
+    position: absolute;
+    bottom: 10%;
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    margin: 4px 2px;
+    cursor: pointer;
+    left: 40%;
+    /* height: 80px; */
+    border-radius: 16px;
+    width: 50%;
+    font-weight: bold;
+  }
