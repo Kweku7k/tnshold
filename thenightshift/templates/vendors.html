@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script src="{{ url_for('static',filename='js/store.js')}}" async ></script> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <title>The Night Shift</title>             
+  </head>
+
+  <body style="background: white;">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <a class="navbar-brand" href="{{ url_for('next')}},">TNS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('reply')}}">Help! <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+<div class="whitespace" style="height: 20px;"></div>
+
+<!-- <div class="container">   -->
+  <h4 style="margin-left: 20px;">The currently available vendors are:</h4>
+<!-- </div> -->
+
+
+<!-- --------------------------------start----------------------------- -->
+<div class="vcard">
+  <a href="{{ url_for('schoolpac')}}">
+<h6 class="vend" style="padding-left:10%; line-height: 45px; text-align: left; vertical-align: middle;">
+  School Pac
+</h6>
+</a>   
+      </div>
+
+      
+        <!-- <div class="vcard">
+            <a href="{{ url_for('indomiebar')}}">
+          <h6 class="vend" style="padding-left:10%; line-height: 45px; text-align: left; vertical-align: middle;">The Indomie Bar</h6>
+        </a> 
+        </div> -->
+
+
+      <!-- <div class="vcard ">
+        <a href="{{ url_for('spectra')}}">
+          <h6 class="vend" style="padding-left:10%; line-height: 45px; text-align: left; vertical-align: middle;">Spectra's Kitchen</h6>
+        </a>
+        </div> -->
+
+        <!-- <div class="vcard ">
+          <a href="{{ url_for('immaculate')}}">
+            <h6 class="vend" style="padding-left:10%; line-height: 45px; text-align: left; vertical-align: middle;">Immaculate Bites</h6>
+          </a>
+          </div> -->
+
+<!--           
+          <div class="vcard ">
+            <a href="{{ url_for('iklina')}}">
+              <h6 class="vend" style="padding-left:10%; line-height: 45px; text-align: left; vertical-align: middle;">Iklina</h6>
+            </a>
+            </div> -->
+    
+
+<script>
+var vendor = document.getElementsByClassName('vcard')
+for (var i = 0; i < vendor.length; i++){ 
+  var button = vendor[i]
+  button.addEventListener('click',explore)
+}
+
+// function removeCartItem(event){
+//     var buttonClicked = event.target
+//             buttonClicked.parentElement.parentElement.parentElement.remove()
+
+function explore(event) {
+var buttonClicked = event.target
+var vendorValue = buttonClicked.innerText
+console.log(vendorValue)
+var theVendor = []
+theVendor.push(vendorValue)
+console.log(theVendor)
+localStorage.setItem("activeVendor", JSON.stringify(theVendor));
+}
+
+
+</script>
+
+
+          <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      </body>
+      </html>

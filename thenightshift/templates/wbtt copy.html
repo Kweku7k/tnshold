@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/tempstyle.css')}}">
+<!-- <link href="https://fonts.googleapis.com/css?family=Poppins:800i&display=swap" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+{% endblock %}
+
+{% block body %}
+
+<div class="mobile-top">
+    <!-- <i class="fas fa-shopping-cart fa-2x"></i> -->
+    <h5 class="popin" id="lil"><span id="light">tns</span><span class="another">ghana.</span></h5>
+</div>
+
+<div class="menu-card">
+    <!-- <div class="search-space"></div> -->
+    <div class="container">
+         <div class="scrolling-wrapper">
+             <!-- <div class="vendor-active">
+                 <h4>Top Picks</h4>
+             </div>
+             <div class="vendor">
+                <h4>School Pac</h4>
+            </div>
+            <div class="vendor">
+                <h4>Josephine</h4>
+            </div>
+            <div class="vendor">
+                <h4>Iklina</h4>
+            </div>
+            <div class="vendor">
+                <h4>Top Picks</h4>
+            </div>
+            <div class="vendor">
+                <h4>Top Picks</h4>
+            </div> -->
+            <h5 class="popin" id="pop">Top Picks</h5>
+         </div>
+    </div>
+<!-- Top Picks---------------------------------- -->
+    <div class="scrolling-wrapper">
+            <div class="food-preview">
+                <a href="{{ url_for('tempdescription')}}"> 
+                <img src="{{ url_for('static',filename='img/Fries-porn.png')}}">
+                </a>
+                <h6 div class="main">French Fries</h6>
+                <h6 div class="support">Ghc10.00</h6>
+
+                <!-- <br> -->
+            </div>
+            <!-- <h6>DDD</h6> -->
+            <div class="food-preview">
+                <img src="{{ url_for('static',filename='img/Intersect.png')}}">
+                <h6 class="main">Fried Rice</h6 class="main">
+                <h6 div class="support">Ghc10.00</h6>
+
+
+             </div>
+             <div class="food-preview">
+                <img src="{{ url_for('static',filename='img/Fries-porn.png')}}">
+                <h6 class="main">Banku</h6>
+                <h6 div class="support">Ghc10.00</h6>
+
+
+             </div>
+</div>
+<!-- End of Top Picks---------------------------------- -->
+
+<section>
+    
+    <div class="container">
+
+    <div class="vending row">   
+        <h5 class="section-head" class="popin">Vendors</h5>        
+        <h4 class="view-all-option"><u>View all &#8594;</u></h4>
+    </div>
+
+    <a href="{{ url_for('tempdynamic')}}">
+<div class="row" id="vrow">
+    <div class="elipse">
+    </div>
+        <div class="definition">
+            <h6 class="topin">Bueno Dias</h6>
+            <h6 class="weak">Yeah Nigga some more texttttt</h6>
+        </div>
+        <div class="asdf" id="online">
+            online
+        </div>
+    </div>
+    </a>
+
+<a href="{{ url_for('tempdynamic')}}">
+<div class="row" id="vrow">
+    <div class="elipse">
+    </div>
+        <div class="definition">
+            <h6 class="topin">School Pac</h6>
+            <h6 class="weak">Yeah Nigga some more texttttt</h6>
+        </div>
+        <div class="asdf">
+            Ghc 20.00
+        </div>
+    </div>
+    </a>
+
+
+<div class="row" id="vrow">
+    <div class="elipse">
+    </div>
+        <div class="definition">
+            <h6 class="topin">Street Mario</h6>
+            <h6 class="weak">Yeah Nigga some more texttttt</h6>
+        </div>
+        <div class="asdf">
+            Ghc 20.00
+        </div>
+    </div>
+
+    <div class="row" id="vrow">
+        <div class="elipse">
+        </div>
+            <div class="definition">
+                <h6 class="topin">Pronto</h6>
+                <h6 class="weak">Yeah Nigga some more texttttt</h6>
+            </div>
+            <div class="asdf">
+                Ghc 20.00
+            </div>
+        </div>
+<!-- </div> -->
+<!-- 
+    <div class="ve row">
+        <div class="v-pic" style="width: 10%; margin-left: 2%;" >
+           <img src="{{ url_for('static',filename='img/user.png')}}" style="width: 100%;"></div>
+        <div class="v-title" style="width: 50%; margin-left: 3%; margin-right: 3%;">
+            School Pac
+        </div>
+        <div class="v-side" style="width: 30%">
+            <i class="fas fa-star" id="yes"></i>
+            <i class="fas fa-star" id="yes"></i>
+            <i class="fas fa-star" id="yes"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+
+        </div>
+    </div>
+
+    <div class="ve row">
+        <div class="v-pic" style="width: 10%; margin-left: 2%;" >
+            <img src="{{ url_for('static',filename='img/user.png')}}" style="width: 100%;">
+        </div>
+        <div class="v-title" style="width: 50%; margin-left: 3%; margin-right: 3%;">
+            Iklina
+        </div>
+        <div class="v-side" style="width: 30%">
+            <i class="fas fa-star" id="yes"></i>
+            <i class="fas fa-star" id="yes"></i>
+            <i class="fas fa-star" id="yes"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+
+        </div>
+    </div>
+
+    <div class="ve row">
+        <div class="v-pic" style="width: 10%; margin-left: 2%;" >
+            <img src="{{ url_for('static',filename='img/user.png')}}" style="width: 100%;">
+        </div>
+        <div class="v-title" style="width: 50%; margin-left: 3%; margin-right: 3%;">
+            Josephine
+        </div>
+        <div class="v-side" style="width: 30%">
+            <i class="fas fa-star" id="yes"></i>
+            <i class="fas fa-star" id="yes"></i>
+            <i class="fas fa-star" ></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+
+        </div>
+    </div> -->
+    
+
+    
+</div>
+    
+    
+</section>
+
+<!-- <div class -->
+
+</div>
+
+
+{% endblock %}

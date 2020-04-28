@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/card.css">
+    </head>
+<body>
+
+
+
+  <nav class="navbar navbar-light bg-transparent">
+      <span class="navbar-brand mb-0 h1">TNS</span>
+    </nav>
+
+<h4 class="top-thing">Your order is being processed</h4>
+
+  <div class="summary-card">
+    <div class="thanks text-center">
+    <h4 class="one">Thank you for using TNS</h4>
+    <br>
+    <h6>Your cart total is</h6>
+   <div class="variable">
+
+   </div>
+    <br>  
+    <h6>Estimated time of arrival is 30 minutes</h6>
+    </div>
+<br>
+<!-- <div class="allovit" style="margin: auto;"> -->
+    <div class="row">
+     <!-- <div class="col-md-6"> -->
+    <div class="Done">
+      <h6 class="done" style="text-align: center; vertical-align: middle;"><a href="{{ url_for('next')}}" style="color:black;"> &larr; Order Again</a></h6 >
+    </div>
+    
+    <!-- </div> -->
+    <div class="space">
+    </div>
+    <!-- <div class="col-md-6"> -->
+    <div class="Done">
+      <h6 class="done" style="text-align: center; color: black; "><a href="{{ url_for('reply')}}" style="color: black;">Leave a reply &#8594;</a></h6 >
+    </div>
+    <!-- </div> -->
+    <!-- </div> -->
+</div>
+  
+
+    <!-- <div class="Done">
+        <h6 class="done" style="text-align: center; vertical-align: middle;">Order Again</h6 >
+      </div>
+      </div>
+     -->
+    <!-- <button class="again">Lets do it again!</button>
+    <div class="inner-summary-card">
+      
+      <h4 class="comment" style="margin:auto;">Leave us a comment</h4>
+    </div>
+  </div> -->
+
+<script>
+var totalCho = JSON.parse(localStorage.getItem("finalFigure"));
+
+var totalHolder = document.getElementsByClassName('variable')[0]
+    var theTotal = document.createElement('div')
+    // var formArray = array.innerHTML
+    var totalContent= `
+    <h1 class="big">Ghc${totalCho}</h1>
+    </div>
+    `
+    
+    theTotal.innerHTML = totalContent
+    totalHolder.append(theTotal)
+</script>
+
+</body>
+</html>

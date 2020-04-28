@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/form.css')}}">
+{% endblock %}
+
+{% block body %}
+<form action="/test" method="POST" style="margin: 4%; background-color: white>
+  <h4>Please fill out this form to confirm your purchase.</h4>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" name="Name" id="Name" required>
+  </div>
+
+ 
+  <div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input type="text" class="form-control" name="phone" id="phone">
+  </div>
+  
+  <div class="form-group">
+    <label for="aphone">Other Number</label>
+    <input type="text" class="form-control" name="aphone" id="aphone">
+  </div>
+
+  <div class="form-group">
+    <label for="hostel">Hostel</label>
+    <select class="form-control" onchange="anothername()" id="hostel" name="hostel" required>
+      <option>--Choose</option>
+      <option>Boys Hostel</option>
+      <option>Pronto</option>
+      <option>Old Girls</option>
+
+    </select>
+  </div>
+  <!-- <div class="Block">
+    <label for="block">Block</label>
+    <select class="form-control" id="block" name="block" required>
+      <option>1 - A</option>
+      <option>2 - B</option>
+      <option>3 - C</option>
+      <option>4 - D</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+    </select>
+  </div> -->
+  <!-- <div class="test-parent"> -->
+
+    <div class="test">
+        <label for="block">Block</label>
+    </div>
+  <!-- </div> -->
+
+  <div class="trick-form">
+
+
+  </div>
+
+  <div class="total-form">
+
+
+  </div>
+
+  <div class="form-group">
+      <label for="Room">Room Number</label>
+      <input type="number" class="form-control" name="Room" id="Room" required>
+      <!-- <input type="submit" class="Checkout" placeholder="Checkout"> -->
+    </div>
+
+  <div class="vendorssss">
+
+
+  </div>
+
+
+  <div class="whitespace">
+
+    <input type="submit" class="button" value="Submit">
+    <!-- <button type="submit" class="button"><a href="thanks.html">Submit</a></button> -->
+</form>
+
+
+<script async defer>
+function anothername() {
+    var hostel = document.getElementById('hostel').value
+    if (hostel === 'Boys Hostel'){
+      var sholder = document.getElementsByClassName('female')[0]
+      console.log(sholder)
+      if (sholder !== undefined){
+        sholder.remove();
+      }
+      var formHolder = document.getElementsByClassName('test')[0] 
+      var holder = document.createElement('div')
+      var form = ` 
+    <select class="male form-control" id="boys" name="block" required>
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+      <option>D</option>
+    </select>
+  </div>
+      `
+      holder.innerHTML = form
+      formHolder.append(holder)
+    }
+    else if (hostel === 'Pronto'){
+      var sholder = document.getElementsByClassName('male')[0]
+      // var sholder2 = document.getElementsByClassName('Ofemale')[0]
+      console.log(sholder)
+      if (sholder !== undefined){
+        sholder.remove();
+      }
+      // else if(sholder2 !== undefined){
+      //   sholder2.remove
+      // }
+      
+      var formHolder = document.getElementsByClassName('test')[0]
+        var holder = document.createElement('div')
+        var form = ` 
+        <select class="female form-control" id="block" name="block" required>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          </select>
+          </div>
+          `
+          holder.innerHTML = form
+          formHolder.append(holder)
+    }
+    else if (hostel === 'Old Girls'){
+      var sholder = document.getElementsByClassName('female')[0]
+      var sholder3 = document.getElementsByClassName('male')[0]
+
+      console.log(sholder)
+      if (sholder !== undefined || sholder3 !== undefined){
+        sholder.remove();
+        sholder3.remove();
+      }
+     
+
+      
+      var formHolder = document.getElementsByClassName('test')[0] 
+      var holder = document.createElement('div')
+      var form = ` 
+    <select class="male form-control" id="boys" name="block" required>
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+      <option>D</option>
+    </select>
+  </div>
+      `
+      holder.innerHTML = form
+      formHolder.append(holder)
+    }
+  
+    console.log(hostel)
+  }
+
+  var storedCho = JSON.parse(localStorage.getItem("cho"));
+  var objectCho = JSON.parse(localStorage.getItem("Hope"));
+  // var totalCho = JSON.parse(localStorage.getItem("Total"));
+  var totalCho = JSON.parse(localStorage.getItem("finalFigure"));
+  var vendorDetails = JSON.parse(localStorage.getItem("activeVendor"));
+  // var getObject = JSON.parse(localStorage.getItem('storeObj'))
+
+  // document.getElementsByClassName("food").innerText = localStorage.getItem("tItems");
+  var formHolder = document.getElementsByClassName('trick-form')[0]
+  var theForm = document.createElement('div')
+  // var formArray = array.innerHTML
+  var formContent = `
+  
+    <input type="hidden" class="form-control" id="food" name="food" value="${objectCho}">
+    </div>
+    `
+  theForm.innerHTML = formContent
+  formHolder.append(theForm)
+
+  var totalHolder = document.getElementsByClassName('total-form')[0]
+  var theTotal = document.createElement('div')
+  // var formArray = array.innerHTML
+  var totalContent = `
+    <input type="hidden" class="form-control" id="total" name="total" value="${totalCho}">
+    </div>
+    `
+  theTotal.innerHTML = totalContent
+  totalHolder.append(theTotal)
+
+  var block = document.getElementsByClassName('total-form')[0]
+  var theTotal = document.createElement('div')
+  // var formArray = array.innerHTML
+  var totalContent = `
+    <input type="hidden" class="form-control" id="total" name="total" value="${totalCho}">
+    </div>
+    `
+  theTotal.innerHTML = totalContent
+  totalHolder.append(theTotal)
+
+
+  var vendorSpot = document.getElementsByClassName('vendorssss')[0]
+  var SpotHead = document.createElement('div')
+  // var formArray = array.innerHTML
+  var vendorContent = `
+  
+    <input type="hidden" class="form-control" id="vendor" name="vendor" value="${vendorDetails}">
+    </div>
+    `
+  SpotHead.innerHTML = vendorContent
+  vendorSpot.append(SpotHead)
+  
+</script>
+
+
+{% endblock %}

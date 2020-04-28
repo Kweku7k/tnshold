@@ -1,0 +1,26 @@
+.button {
+    position: fixed;
+    bottom: 0;
+    background-color: #ffec13;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    left:0;
+    /* display: inline-block; */
+    /* margin: 4px 2px; */
+    cursor: pointer;
+    /* height: 80px; */
+    border-radius: 16px;
+    width: 100%;
+  }
+
+  .whitespace{
+    background: white;
+    height: 100px!important;
+    width: 100%;
+}
+body{
+  background-color: white;
+}

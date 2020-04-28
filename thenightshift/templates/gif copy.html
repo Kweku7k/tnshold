@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/gifstyle.css')}}">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class="bg"> -->
+      <h4 class="copy">tns<span class="gif">ghana</span></h4>
+    <img src="{{ url_for('static',filename='img/cookery.gif')}}" style="width: 100%;">
+      
+        <h4 class="gif" id="hungry">Food delivery in less than 10 minutes</h4>
+        <div class="container">
+          <h5 class="copy" id="supp">We just go put some allo text for here so say if the users come way like them dey try flex norrr kpowaaa the text dey there.</h5>
+        </div>
+        <a href="{{ url_for('tempcopy')}}"><button class="button">Start Now</button></a>
+        <button class="empty-button"><u>Help!</u></button>
+
+    <!-- </div> -->
+
+
+<script>
+
+
+function ready() {
+    var i = 0;
+    var txt = 'Food delivery in less than 10 minutes.';
+    var speed = 170;
+    
+    // function typeWriter() {
+    document.getElementById("eat").style.display = "none"
+      if (i < txt.length) {
+        document.getElementById("hungry").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    // function vanish{
+    //     document.getElementById("eat").style.display = "none"
+    // }
+    </script>
+
+</body>
+</html>
